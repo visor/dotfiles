@@ -13,9 +13,11 @@ local dbg=dbg
 module("visor.calendar")
 
 local current_day_format = "<b>%s</b>"
+local margin = 5
 local calendar = {
 	month  = os.date('%m'),
 	year   = os.date('%Y'),
+	margin = wibox.layout.margin(),
 	widget = wibox.widget.textbox(),
 	box    = wibox({
 		fg           = "#DCDCCC",
@@ -29,27 +31,31 @@ calendar.widget:set_valign('top')
 calendar.widget:set_align('left')
 
 calendar.box.ontop  = true
-calendar.box.width  = 200
-calendar.box.height = 170
 
-calendar.box:set_widget(calendar.widget)
+calendar.margin:set_widget(calendar.widget)
+calendar.margin:set_margins(margin)
+calendar.box:set_widget(calendar.margin)
 calendar.update = function()
 	calendar.widget:set_markup(string.format(
-		'\n<span font_desc="%s">%s</span>',
-		"Consolas,12",
+		'<span font_desc="%s">%s</span>',
+		"Consolas 12",
 		displayMonth(calendar.month, calendar.year, 2)
 	))
+	local w, h = calendar.widget:fit(-1, -1)
+	calendar.box.width  = w + 2*margin
+	calendar.box.height = h + 2*margin
 end
 
 calendar.show = function(month, year)
 	calendar.month = month
 	calendar.year  = year
-	local screen = capi.screen[capi.mouse.screen]
-	--dbg(capi.screen[capi.mouse.screen].geometry)
-	local x = screen.geometry.x + screen.geometry.width - calendar.box.width - 10
-	local y = 28;
-
 	calendar.update()
+
+	local area = capi.screen[capi.mouse.screen].workarea
+	local x = area.x + area.width - calendar.box.width - margin
+	local y = area.y + margin
+
+	dbg({ x = x, y = y })
 	calendar.box.screen = capi.mouse.screen
 	calendar.box.x = x
 	calendar.box.y = y
@@ -98,7 +104,7 @@ function displayMonth(month,year,weekStart)
 	end
 	local header = os.date(" %B %Y\n",os.time{year=year,month=month,day=1})
 
-	return "<span font_desc='Consolas,14'>" .. header .. "</span>\n" .. lines
+	return "<b>" .. header .. "</b>\n" .. lines
 end
 
 function switchNaughtyMonth(switchMonths)
