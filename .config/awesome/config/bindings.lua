@@ -133,9 +133,8 @@ globalkeys = awful.util.table.join(globalkeys,
 
 	-- Prompt
 	keydoc.group("Запускатели"),
-	awful.key({ modkey            }, "r", function () typeAndRun.show() end, "Type and run"),
-	-- awful.key({ modkey, "Control" }, "s", function () visor.sshPrompt(barPrompt) end, "SSH"),
-	awful.key({ modkey            }, "x", function ()
+	awful.key({ modkey }, "r", function () typeAndRun.show() end, "Type and run"),
+	awful.key({ modkey }, "x", function ()
 		awful.prompt.run(
 			{ prompt = "Run Lua code: " },
 			barPrompt[mouse.screen].widget,
@@ -146,8 +145,8 @@ globalkeys = awful.util.table.join(globalkeys,
 	end, "Выполнить код Lua"),
 
 	-- Всякие тесты
-	keydoc.group("Всякие штуки на тестировании"),
-	awful.key({ modkey            }, "=", function () typeAndRun.show() end, "Окно по середине экрана (что-то вроде type and run)"),
+	-- keydoc.group("Всякие штуки на тестировании"),
+	-- awful.key({ modkey            }, "=", function () typeAndRun.show() end, "Окно по середине экрана (что-то вроде type and run)"),
 
 	keydoc.group("the end")
 )

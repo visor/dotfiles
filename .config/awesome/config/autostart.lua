@@ -4,7 +4,11 @@ run("xrandr --output DVI-I-1 --mode 1400x1050 --right-of DVI-I-0")
 
 
 run("wmname LG3D") --Для Java
-run("setxkbmap -layout 'us,ru(winkeys)' -option 'lv3:ralt_switch,misc:typo,altwin:menu,compose:menu,grp:alt_caps_toggle,terminate:ctrl_alt_bksp'") -- Настройки раскладок клавиатуры
+run("setxkbmap -layout 'us,ru' -model pc105 -variant nodeadkeys,intl") -- Настройки раскладок клавиатуры
+run("setxkbmap -option")
+run("setxkbmap -option 'grp:shift_toggle'")
+run("setxkbmap -option 'misc:typo,lv3:ralt_switch,compose:menu'")
+run("setxkbmap -option 'terminate:ctrl_alt_bksp'")
 
 
 run_once("xscreensaver", "-no-splash") -- Скринсейвер

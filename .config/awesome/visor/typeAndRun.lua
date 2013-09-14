@@ -6,6 +6,8 @@ local naughty = require("naughty")
 local string  = require("string")
 local io      = require("io")
 local table   = require("table")
+local splut   = require("table")
+local json    = require("json")
 
 local mouse      = mouse
 local client     = client
@@ -79,6 +81,9 @@ end
 
 local runSsh = function(text)
 	run(terminal .. " -e ssh " .. text)
+end
+
+local runTranslate = function(text)
 end
 
 local completeShell = function(command, cursorPos, nComplete)
@@ -165,6 +170,10 @@ handlers['=']= {
 handlers['$']= {
 	run = runSsh,
 	complete = completeSsh
+}
+handlers['#']= {
+	run = runTranslate,
+	complete = completeCalc
 }
 
 show = function()
