@@ -1,0 +1,6 @@
+#!/bin/bash
+
+params=$*
+params=${params:=*.jpg}
+
+/usr/local/bin/jpegoptim --strip-all -t $params

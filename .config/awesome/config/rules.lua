@@ -1,0 +1,155 @@
+-- {{{ Rules
+awful.rules.rules = {
+	{
+		rule = { },
+		properties = {
+			border_width = beautiful.border_width,
+			border_color = beautiful.border_normal,
+			focus        = true,
+			keys         = clientkeys,
+			buttons      = clientbuttons,
+			size_hints_honor = false
+		}
+	},
+	{
+		rule_any = {
+			class = {"feh", "Display"}, name = {"feh", "display"}
+		},
+		properties = {
+			floating = true,
+			callback = function (c) awful.placement.centered(c) end
+		}
+	},
+
+	-- 1.dev
+	{
+		rule = { class = "Sublime_text" },
+		properties = { tag = tags[1][1] }
+	},
+	{
+		rule = { class = "jetbrains-phpstorm" },
+		properties = { tag = tags[1][1] }
+	},
+	-- 2.web
+	{
+		rule = { class = "Firefox", role = "browser" },
+		properties = {
+			tag = tags[1][2],
+			floating = false
+		}
+	},
+	{
+		rule = { class = "Google-chrome", role = "browser" },
+		properties = {
+			tag = tags[1][2],
+			floating = false
+		}
+	},
+	{
+		rule = { class = "Google-chrome", role = "pop-up" },
+		properties = {
+			floating = true,
+			callback = function (c) awful.placement.centered(c) end
+		}
+	},
+	{
+		rule = { class = "Opera", role = "browser" },
+		properties = { tag = tags[1][2] }
+	},
+	-- 3.info
+	{
+		rule = { class = "Thunderbird" },
+		properties = {
+			tag = tags[1][3],
+			floating = false
+		}
+	},
+	{
+		rule = { class = "Thunderbird", type = "dialog" },
+		properties = {
+			tag = tags[1][3],
+			floating = true,
+			callback = function (c) awful.placement.centered(c) end
+		}
+	},
+	{
+		rule = { class = "Mail" },
+		properties = { tag = tags[1][3] }
+	},
+	{
+		rule = { class = "qbittorrent" },
+		properties = { tag = tags[1][3] }
+	},
+	-- 4.ims
+	{
+		rule = { class = "Xchat" },
+		properties = {
+			tag                  = tags[1][4],
+			floating             = false,
+			maximized_vertical   = true,
+			maximized_horizontal = true
+		},
+	},
+	{
+		rule = { class = "Skype" },
+		properties = { tag = tags[1][4] }
+	},
+	{
+		rule = { class = "Skype", name = "victor.karamzin - Skype™" },
+		properties = {
+			switchtotag          = true,
+			maximized_vertical   = true,
+			maximized_horizontal = false
+		},
+		callback = function (c) visor.imBuddy(c, 400, true); end
+	},
+	{
+		rule = { class = "Pidgin" },
+		properties = { tag = tags[1][4] }
+	},
+	{
+		rule = { class = "Pidgin", role = "buddy_list" },
+		properties = {
+			floating             = true,
+			maximized_vertical   = true,
+			maximized_horizontal = false
+		},
+		callback = function (c) visor.imBuddy(c, 400, true); end
+	},
+	{
+		rule_any = { class = { "psi", "Psi" } }, except = { instance = "main" },
+		properties = { tag = tags[1][4] }
+	},
+	{
+		rule = { class = "psi", instance = "main" },
+		properties = {
+			tag = tags[1][4],
+			floating             = true,
+			maximized_vertical   = true,
+			maximized_horizontal = false
+		},
+		callback = function (c) visor.imBuddy(c, 400, true); end
+	},
+	-- 5.med
+	{
+		rule = { class = "MPlayer" },
+		properties = { floating = true, tag = tags[1][5] }
+	},
+	{
+		rule = { class = "gimp" },
+		properties = {
+			tag = tags[1][5],
+			floating = false
+
+		}
+	},
+	{
+		rule = { class = "Gimp" },
+		properties = {
+			tag = tags[1][5],
+			floating = false
+
+		}
+	}
+}
+-- }}}

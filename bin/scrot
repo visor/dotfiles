@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+dir="$HOME/scrots/`date +%Y/%m/%d`"
+file="$dir/`date +%H%M%S.%N`.png"
+
+(cd $dir >/dev/null 2>&1) || (mkdir -p $dir)
+import $file
+echo "notify(\"Скриншот\", \"$file\")" | awesome-client
+
+#png $file
+#echo "notify(\"Скриншот\", \"Оптимизирован: $file\")" | awesome-client

@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+dir="$HOME/scrots/`date +%Y/%m/%d`"
+file="$dir/`date +%H%M%S.%N`.png"
+
+(cd $dir >/dev/null 2>&1) || (mkdir -p $dir)
+import -window root -display :0.0 -screen $file
+echo "notify(\"Скриншот\", \"$file\")" | awesome-client

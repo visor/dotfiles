@@ -1,0 +1,6 @@
+#!/bin/bash
+
+params=$*
+params=${params:=*.png}
+
+/usr/local/bin/optipng -strip all -o7 -zm1-9 $params
