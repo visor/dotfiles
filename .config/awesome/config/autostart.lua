@@ -1,6 +1,6 @@
 -- Настройка экранов
 run("xrandr --output DVI-I-0 --mode 2048x1152")
-run("xrandr --output DVI-I-1 --mode 1400x1050 --right-of DVI-I-0")
+run("xrandr --output DVI-I-1 --mode 1280x1024 --right-of DVI-I-0")
 
 
 run("wmname LG3D") --Для Java
