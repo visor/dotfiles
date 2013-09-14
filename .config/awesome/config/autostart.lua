@@ -7,9 +7,7 @@ run("wmname LG3D") --Для Java
 
 run("setxkbmap -layout 'us,ru(winkeys)'") -- Настройки раскладок клавиатуры
 run("setxkbmap -option")
-run("setxkbmap -option 'grp:shift_toggle'") -- Два шифта переключение расклдаки
-run("setxkbmap -option 'misc:typo,lv3:ralt_switch,compose:menu'") -- Типография и спецсимволы
-run("setxkbmap -option 'terminate:ctrl_alt_bksp'") -- рестарт иксов
+run("setxkbmap -option 'grp:shift_toggle,misc:typo,lv3:ralt_switch,compose:menu,terminate:ctrl_alt_bksp'") -- рестарт иксов
 
 
 run_once("xscreensaver", "-no-splash") -- Скринсейвер
@@ -18,7 +16,7 @@ run_once("parcellite") -- Монитор буфера обмена
 --todo: cmus
 
 
-run("sbxkb") -- Флажок раскладки
+run_once("sbxkb") -- Флажок раскладки
 
 
 run_once("psi-plus")
