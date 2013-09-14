@@ -32,7 +32,7 @@ local getBox = function()
 		bg           = "#1E2320",
 		border_color = "#6F6F6F",
 		border_width = 1
-	});
+	})
 	prompt = awful.widget.prompt()
 
 	box.ontop  = true
