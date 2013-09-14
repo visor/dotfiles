@@ -118,16 +118,19 @@ globalkeys = awful.util.table.join(globalkeys,
 			awful.layout.set(awful.layout.webdev, tags[1][2])
 		end
 
-		local m = awful.menu({ width = 240, items = {
-			{ "480", function() reWidth(480) end},
-			{ "600", function() reWidth(600) end},
-			{ "768", function() reWidth(768) end},
-			{ "960", function() reWidth(960) end},
-			{ "1024", function() reWidth(1024) end},
-			{ "1280", function() reWidth(1280) end},
-			{ "1440", function() reWidth(1440) end},
-			{ "2048", function() reWidth(2048) end}
-		}})
+		local m = awful.menu({
+			theme = { width = 400 },
+			items = {
+				{ "480", function() reWidth(480) end},
+				{ "600", function() reWidth(600) end},
+				{ "768", function() reWidth(768) end},
+				{ "960", function() reWidth(960) end},
+				{ "1024", function() reWidth(1024) end},
+				{ "1280", function() reWidth(1280) end},
+				{ "1440", function() reWidth(1440) end},
+				{ "2048", function() reWidth(2048) end}
+			}
+		})
 		m:show({ keygrabber = true })
 	end),
 
