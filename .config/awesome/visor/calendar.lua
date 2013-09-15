@@ -8,7 +8,6 @@ local capi = {
 local awful   = require("awful")
 local naughty = require("naughty")
 local wibox   = require("wibox")
-local dbg=dbg
 
 module("visor.calendar")
 
@@ -55,7 +54,6 @@ calendar.show = function(month, year)
 	local x = area.x + area.width - calendar.box.width - margin
 	local y = area.y + margin
 
-	dbg({ x = x, y = y })
 	calendar.box.screen = capi.mouse.screen
 	calendar.box.x = x
 	calendar.box.y = y
