@@ -20,8 +20,6 @@ config       = {}
 fileName     = nil
 runCommand   = terminal .. " -n %s -title %s -e tmux -L %s"
 
-local defaultIcon = "/usr/share/icons/gnome/32x32/applications/terminal.png"
-
 local getTmux = function(name)
 	for k, c in pairs(client.get()) do
 		if name == c.icon_name then
