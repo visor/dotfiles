@@ -31,6 +31,7 @@ globalkeys = awful.util.table.join(globalkeys,
 	-- awful.key({ modkey }, "e", function () scratch.drop("urxvt -name mc -e mc", "center", "center", 1280, 1000) end, "Midnight Commander"),
 	awful.key({ modkey }, "e", function () tmux.show("files") end, "Midnight Commander"),
 	awful.key({ modkey }, "t", function () tmux.show("terminal") end, "Терминал"),
+	awful.key({ modkey }, "u", function () tmux.show("tools") end, "Музыка, торренты и т.п."),
 	awful.key({ modkey }, "c", function () scratch.drop("cherrytree", "center", "center",           1280, 1000) end, "Заметки"),
 	-- awful.key({ modkey, "Control" }, "m", function ()
 	-- 	scratch.drop("urxvt -title MOCPlayer -e mocp", "center", "center", 1280, 1000)
