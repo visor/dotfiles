@@ -61,6 +61,7 @@ show = function(name)
 	awful.screen.focus(screen)
 	awful.tag.viewonly(tags[screen][tag])
 	if (tmux) then
+		client.focus = tmux
 		tmux:raise()
 		return
 	end
