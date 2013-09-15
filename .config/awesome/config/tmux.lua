@@ -1,12 +1,14 @@
-tmux.tagNumber = 6
-tmux.debug = false
-tmux.runCommand = terminal .. " -n %s -title %s -e tmux -L %s"
-tmux.fileName = __dir__ .. "/config/tmux.lua"
-tmux.config = {
+tmux.tagNumber    = 6
+tmux.screenNumber = 2
+tmux.debug        = false
+tmux.runCommand   = terminal .. " -n %s -title %s -e tmux -L %s"
+tmux.fileName     = __dir__ .. "/config/tmux.lua"
+tmux.config       = {
 	terminal = {
 		title = "Console",
-		screen = 2,
 		icon = "/usr/share/icons/gnome/32x32/applications/terminal.png",
+		screen = 2,
+		tag = 6,
 		session = {
 			"new-session -s 'Console'",
 			"new-window",
@@ -16,6 +18,8 @@ tmux.config = {
 	files = {
 		title = "Files",
 		icon = "/usr/share/icons/gnome/32x32/applications/file-manager.png",
+		screen = 2,
+		tag = 6,
 		session = {
 			"new-session -s 'Files' mc",
 			"bind-key -n C-F12 neww mc"
@@ -24,11 +28,14 @@ tmux.config = {
 	notes = {
 		title = "Notes",
 		icon = "/usr/share/icons/hicolor/32x32/apps/evolution-memos.png",
+		screen = 2,
+		tag = 6,
 		session = {}
 	},
 	tools = {
 		title = "Tools",
 		screen = 2,
+		tag = 6,
 		session = {
 			"new-session -s 'Tools' cmus",
 			"rename-window cmus",
@@ -38,6 +45,8 @@ tmux.config = {
 	},
 	root = {
 		title = "Root",
+		screen = 2,
+		tag = 6,
 		session = {},
 		todo = {
 			"yum",

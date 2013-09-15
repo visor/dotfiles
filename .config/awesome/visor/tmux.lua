@@ -13,11 +13,12 @@ local terminal = terminal
 
 module("visor.tmux")
 
-debug      = false
-tagNumber  = nil
-config     = {}
-fileName   = nil
-runCommand = terminal .. " -n %s -title %s -e tmux -L %s"
+debug        = false
+tagNumber    = 6
+screenNumber = 1
+config       = {}
+fileName     = nil
+runCommand   = terminal .. " -n %s -title %s -e tmux -L %s"
 
 local defaultIcon = "/usr/share/icons/gnome/32x32/applications/terminal.png"
 
@@ -54,10 +55,11 @@ show = function(name)
 		return
 	end
 
-	local screen = config[name].screen or 1
+	local screen = config[name].screen or screenNumber
+	local tag    = config[name].tag or tagNumber
 	local tmux = getTmux(name)
 	awful.screen.focus(screen)
-	awful.tag.viewonly(tags[screen][tagNumber])
+	awful.tag.viewonly(tags[screen][tag])
 	if (tmux) then
 		tmux:raise()
 		return
