@@ -73,7 +73,7 @@ globalkeys = awful.util.table.join(globalkeys,
 		end),
 
 	-- Layout manipulation
-	keydoc.group("Управление раскладкой"),
+	keydoc.group("Управление раскладкой окон"),
 	awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
 	awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end),
 	awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end),
@@ -109,10 +109,11 @@ globalkeys = awful.util.table.join(globalkeys,
 	-- awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
 	-- web dev layout
+	keydoc.group("Веб раскладка"),
 	awful.key({ modkey }, "/", function()
 		awful.layout.webdev.center = not awful.layout.webdev.center
 		awful.layout.set(awful.layout.webdev, tags[1][2])
-	end),
+	end, "С/Без колонкой под инструменты"),
 	awful.key({ modkey }, "\\", function()
 		local function reWidth(newWidth)
 			awful.layout.webdev.width = newWidth
@@ -133,7 +134,7 @@ globalkeys = awful.util.table.join(globalkeys,
 			}
 		})
 		m:show({ keygrabber = true })
-	end),
+	end, "Изменить ширину основной колонки"),
 
 	-- Prompt
 	keydoc.group("Запускатели"),
@@ -164,13 +165,13 @@ clientkeys = awful.util.table.join(
 	-- awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end),
 	-- awful.key({ modkey,           }, "n",      function (c) c.minimized = true               end),
 
-	awful.key({ modkey,           }, "i",      dbg) --"Get client-related information"
+	awful.key({ modkey,           }, "i",      dbg, "Свойства окна")
 )
 
 -- Compute the maximum number of digit we need, limited to 9
 keynumber = 0
 for s = 1, screen.count() do
-   keynumber = math.min(9, math.max(#tags[s], keynumber));
+	keynumber = math.min(9, math.max(#tags[s], keynumber));
 end
 
 -- Bind all key numbers to tags.
@@ -178,32 +179,28 @@ end
 -- This should map on the top row of your keyboard, usually 1 to 9.
 for i = 1, keynumber do
 	globalkeys = awful.util.table.join(globalkeys,
-		awful.key({ modkey }, "#" .. i + 9,
-				  function ()
-						local screen = mouse.screen
-						if tags[screen][i] then
-							awful.tag.viewonly(tags[screen][i])
-						end
-				  end),
-		awful.key({ modkey, "Control" }, "#" .. i + 9,
-				  function ()
-					  local screen = mouse.screen
-					  if tags[screen][i] then
-						  awful.tag.viewtoggle(tags[screen][i])
-					  end
-				  end),
-		awful.key({ modkey, "Shift" }, "#" .. i + 9,
-				  function ()
-					  if client.focus and tags[client.focus.screen][i] then
-						  awful.client.movetotag(tags[client.focus.screen][i])
-					  end
-				  end),
-		awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
-				  function ()
-					  if client.focus and tags[client.focus.screen][i] then
-						  awful.client.toggletag(tags[client.focus.screen][i])
-					  end
-				  end))
+		awful.key({ modkey }, "#" .. i + 9, function ()
+			local screen = mouse.screen
+			if tags[screen][i] then
+				awful.tag.viewonly(tags[screen][i])
+			end
+		end),
+		awful.key({ modkey, "Control" }, "#" .. i + 9, function ()
+			local screen = mouse.screen
+			if tags[screen][i] then
+				awful.tag.viewtoggle(tags[screen][i])
+			end
+		end),
+		awful.key({ modkey, "Shift" }, "#" .. i + 9, function ()
+			if client.focus and tags[client.focus.screen][i] then
+				awful.client.movetotag(tags[client.focus.screen][i])
+			end
+		end),
+		awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9, function ()
+			if client.focus and tags[client.focus.screen][i] then
+				awful.client.toggletag(tags[client.focus.screen][i])
+			end
+		end))
 end
 
 clientbuttons = awful.util.table.join(
