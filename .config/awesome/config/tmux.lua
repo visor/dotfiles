@@ -1,14 +1,16 @@
-tmux.tag = tags[1][6]
+tmux.tagNumber = 6
 tmux.debug = false
 tmux.runCommand = terminal .. " -n %s -title %s -e tmux -L %s"
 tmux.fileName = __dir__ .. "/config/tmux.lua"
 tmux.config = {
 	terminal = {
 		title = "Console",
+		screen = 2,
 		icon = "/usr/share/icons/gnome/32x32/applications/terminal.png",
 		session = {
 			"new-session -s 'Console'",
-			"split-window -dh"
+			"new-window",
+			"select-window -t 1",
 		}
 	},
 	files = {
@@ -26,6 +28,7 @@ tmux.config = {
 	},
 	tools = {
 		title = "Tools",
+		screen = 2,
 		session = {
 			"new-session -s 'Tools' cmus",
 			"rename-window cmus",

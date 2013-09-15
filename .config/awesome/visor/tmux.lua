@@ -8,12 +8,13 @@ local awful    = require("awful")
 
 local run      = awful.util.spawn
 local dbg      = dbg
+local tags     = tags
 local terminal = terminal
 
 module("visor.tmux")
 
 debug      = false
-tag        = nil
+tagNumber  = nil
 config     = {}
 fileName   = nil
 runCommand = terminal .. " -n %s -title %s -e tmux -L %s"
@@ -32,7 +33,6 @@ local getCommand = function(name)
 	local appConfig = config[name]
 	local session   = table.concat(appConfig.session, " \\; ")
 	local title     = name
-	-- local icon      = defaultIcon
 
 	if (not backend) then
 		backend = "tmux"
@@ -40,11 +40,7 @@ local getCommand = function(name)
 	if (appConfig.title) then
 		title = appConfig.title
 	end
-	-- if (appConfig.icon) then
-	-- 	icon = appConfig.icon
-	-- end
 
-	-- return string.format(runCommand, name, title, icon, name) .. " " .. session
 	return string.format(runCommand, name, title, name) .. " " .. session
 end
 
@@ -58,10 +54,11 @@ show = function(name)
 		return
 	end
 
+	local screen = config[name].screen or 1
 	local tmux = getTmux(name)
-	awful.tag.viewonly(tag)
+	awful.screen.focus(screen)
+	awful.tag.viewonly(tags[screen][tagNumber])
 	if (tmux) then
-		client.focus = tmux
 		tmux:raise()
 		return
 	end
