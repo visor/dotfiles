@@ -39,8 +39,9 @@ tmux.config       = {
 		session = {
 			"new-session -s 'Tools' cmus",
 			"rename-window cmus",
-			"new-window rtorrent",
-			"rename-window torrent"
+			"neww rtorrent",
+			"rename-window torrent",
+			"select-window -t 1"
 		},
 	},
 	root = {
