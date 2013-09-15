@@ -150,6 +150,12 @@ awful.rules.rules = {
 			floating = false
 
 		}
+	},
+	{
+		rule = { class = "URxvt", name = "Tools" },
+		properties = {
+			tag = tags[2][6]
+		}
 	}
 }
 -- }}}

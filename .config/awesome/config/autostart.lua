@@ -1,5 +1,6 @@
 -- Настройка экранов
 run("xrandr --output DVI-I-0 --mode 2048x1152 --output DVI-I-1 --mode 1280x1024 --right-of DVI-I-0")
+run("tmux start-server")
 
 
 run("wmname LG3D") --Для Java

@@ -8,7 +8,6 @@ tmux.config = {
 		icon = "/usr/share/icons/gnome/32x32/applications/terminal.png",
 		session = {
 			"new-session -s 'Console'",
-			"display-message files",
 			"split-window -dh"
 		}
 	},
@@ -27,11 +26,12 @@ tmux.config = {
 	},
 	tools = {
 		title = "Tools",
-		session = {},
-		todo = {
-			"cmus",
-			"rtorrent"
-		}
+		session = {
+			"new-session -s 'Tools' cmus",
+			"rename-window cmus",
+			"new-window rtorrent",
+			"rename-window torrent"
+		},
 	},
 	root = {
 		title = "Root",
