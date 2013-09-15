@@ -41,7 +41,7 @@ awful.rules.rules = {
 	{
 		rule = { class = "Google-chrome", role = "browser" },
 		properties = {
-			tag = tags[1][2],
+			tag = tags[2][2],
 			floating = false
 		}
 	},
@@ -53,8 +53,10 @@ awful.rules.rules = {
 		}
 	},
 	{
-		rule = { class = "Opera", role = "browser" },
-		properties = { tag = tags[1][2] }
+		rule = { class = "luakit" },
+		properties = {
+			tag = tags[2][2]
+		}
 	},
 	-- 3.info
 	{
