@@ -1,7 +1,7 @@
 [core]
 	symlinks = false
 	autocrlf = input
-	editor   = gedit
+	editor   = urxvt -e vim
 	excludesfile = /home/visor/.gitignore_global
 
 [user]
@@ -59,7 +59,7 @@
 	spellingdictionary = none
 
 [guitool "Edit"]
-	cmd = gedit $FILENAME
+	cmd = urxvt -e vim $FILENAME
 	noconsole = yes
 	needsfile = yes
 
