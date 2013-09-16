@@ -6,9 +6,8 @@ run("tmux start-server")
 run("wmname LG3D") --Для Java
 
 
-run("setxkbmap -layout 'us,ru(winkeys)'") -- Настройки раскладок клавиатуры
-run("setxkbmap -option")
-run("setxkbmap -option 'grp:shift_toggle,misc:typo,lv3:ralt_switch,compose:menu,terminate:ctrl_alt_bksp'") -- рестарт иксов
+-- Настройки раскладок клавиатуры
+run("setxkbmap -layout 'us,ru(winkeys)' -option -option 'grp:shift_toggle,misc:typo,lv3:ralt_switch,compose:menu,terminate:ctrl_alt_bksp'")
 
 
 run_once("xscreensaver", "-no-splash") -- Скринсейвер
