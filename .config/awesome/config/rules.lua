@@ -39,6 +39,13 @@ awful.rules.rules = {
 		}
 	},
 	{
+		rule = { class = "Firefox", instance = "Firebug" },
+		properties = {
+			tag = tags[2][1],
+			floating = false
+		}
+	},
+	{
 		rule = { class = "Google-chrome", role = "browser" },
 		properties = {
 			tag = tags[2][2],
