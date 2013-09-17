@@ -6,7 +6,6 @@ tmux.fileName     = __dir__ .. "/config/tmux.lua"
 tmux.config       = {
 	terminal = {
 		title = "Console",
-		icon = "/usr/share/icons/gnome/32x32/applications/terminal.png",
 		screen = 2,
 		tag = 6,
 		session = {
@@ -17,7 +16,6 @@ tmux.config       = {
 	},
 	files = {
 		title = "Files",
-		icon = "/usr/share/icons/gnome/32x32/applications/file-manager.png",
 		screen = 2,
 		tag = 6,
 		session = {
@@ -27,7 +25,6 @@ tmux.config       = {
 	},
 	notes = {
 		title = "Notes",
-		icon = "/usr/share/icons/hicolor/32x32/apps/evolution-memos.png",
 		screen = 2,
 		tag = 6,
 		session = {}
