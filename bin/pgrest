@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+if [ -z "$1" -o -z "$2" -o -z "$3" ]; then
+	echo $0 db user file
+	exit
+fi
+
+psql -U $2 -d $1 -f $3 > /dev/null
