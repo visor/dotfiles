@@ -16,7 +16,7 @@ globals = {
  -- check_filepath      = false,
 
 	term = "urxvt",
- --	editor = "st",
+ 	editor = "/usr/programs/sublime-text-3/sublime_text"
 }
 
 -- Make useragent
