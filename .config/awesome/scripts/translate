@@ -1,0 +1,75 @@
+#!/bin/env php
+<?php
+
+	function notify($text) {
+		$text = str_replace(PHP_EOL, '\\n', $text);
+		$command =
+			'echo "naughty.notify({ text = \"' . $text . '\", timeout = -1, hover_timeout = -1, screen = mouse.screen })"'
+			.' | awesome-client'
+		;
+		system($command);
+	}
+
+	function parseParams($args) {
+		$result = array(
+			'from' => 'ru',
+			'to'   => 'en',
+			'text' => null
+		);
+		$parts = explode('|', $args);
+		$count = count($parts);
+		switch ($count) {
+			case 3:
+				$result['from'] = $parts[0];
+				$result['to']   = $parts[1];
+				$result['text'] = $parts[2];
+				break;
+
+			case 2:
+				$result['to']   = $parts[0];
+				$result['text'] = $parts[1];
+
+			default:
+				$result['text'] = $args;
+		}
+		return $result;
+	}
+
+	$params = parseParams($_SERVER['argv'][1]);
+	$request = new HttpRequest('http://translate.google.ru/translate_a/t');
+	$request->addQueryData(array(
+		'client' => 't',
+		'hl' => 'ru',
+		'sc' => 2,
+		'ie' => 'UTF-8',
+		'oe' => 'UTF-8',
+		'oc' => '1',
+		'otf' => '1',
+		'ssel' => '1',
+		'tset' => '1',
+
+		'sl' => $params['from'],
+		'tl' => $params['to'],
+		'q'  => $params['text']
+	));
+
+	$response = $request->send();
+	$toParse  = $response->getBody();
+	do {
+		$toParse  = str_replace(',,', ',null,', $toParse);
+	} while (strPos($toParse, ',,'));
+	$toParse  = json_decode($toParse);
+	$parts = array();
+	if (is_array($toParse[1])) {
+		foreach ($toParse[1] as $variants) {
+			$parts[] = $variants[0];
+			foreach ($variants[1] as $word) {
+				$parts[] = '<span color=\'#ffffff\' font=\'Consolas 12\'>  ' . $word . '</span>';
+			}
+			$parts[] = '';
+		}
+		array_pop($parts);
+	} else {
+		$parts[] = 'Перевод не найден';
+	}
+	notify(implode('\\n', $parts));

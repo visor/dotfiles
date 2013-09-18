@@ -6,8 +6,6 @@ local naughty = require("naughty")
 local string  = require("string")
 local io      = require("io")
 local table   = require("table")
-local splut   = require("table")
-local json    = require("json")
 
 local mouse      = mouse
 local client     = client
@@ -15,6 +13,7 @@ local screen     = screen
 local run        = awful.util.spawn
 local dbg        = dbg
 local terminal   = terminal
+local __dir__    = __dir__
 
 module("visor.typeAndRun")
 
@@ -84,6 +83,8 @@ local runSsh = function(text)
 end
 
 local runTranslate = function(text)
+	local command = __dir__ .. "/scripts/translate '" .. text .. "'"
+	run(command)
 end
 
 local completeShell = function(command, cursorPos, nComplete)
