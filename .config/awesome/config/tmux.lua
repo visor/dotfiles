@@ -38,9 +38,12 @@ tmux.config       = {
 			"rename-window cmus",
 			"neww rtorrent",
 			"rename-window torrent",
-			"select-window -t 1",
+			"neww /home/tools/bin/torrents-sorter.php",
+			"rename-window torrents-sorter",
 			"setw -t 1 monitor-activity off",
-			"setw -t 2 monitor-activity off"
+			"setw -t 2 monitor-activity off",
+			"setw -t 3 monitor-activity off",
+			"select-window -t 1"
 		},
 	},
 	root = {
