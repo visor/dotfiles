@@ -72,7 +72,10 @@ end
 local runCalc = function(expr)
 	local result = awful.util.eval("return (" .. expr .. ")")
 	naughty.notify({
-		text    = '<span>' .. expr .. ' =\n</span><span >' .. result .. '</span>',
+		text = string.format(
+			'<span color="#CC9393" font_desc="Consolas 14">%s</span>\n\n<span color="#7F9F7F">%s</span>',
+			result, expr
+		),
 		screen  = mouse.screen,
 		timeout = 10
 	})
