@@ -604,4 +604,22 @@ add_cmds({
 	cmd({"rss", "news"}, "Читалка новостей", function (w)
 		w:navigate("http://cloud.feedly.com/#index")
 	end),
+
+	cmd("dbg-start", "Включить удалённую отладку для PhpStorm", function (w)
+		w.view:eval_js(
+			"document.cookie='XDEBUG_SESSION=PHPSTORM;path=/;'"
+		)
+	end),
+	cmd("dbg-stop", "Выключить удалённую отладку для PhpStorm", function (w)
+		w.view:eval_js(
+			"document.cookie='XDEBUG_SESSION=;expires=Mon, 05 Jul 2000 00:00:00 GMT;path=/;'"
+		)
+	end),
+	cmd("dbg-this", "Отладить текущую страницу в PhpStorm", function (w)
+		w.view:eval_js(
+			"document.cookie='XDEBUG_SESSION=PHPSTORM;path=/;';"
+			.. "document.location.reload();"
+			.. "document.cookie='XDEBUG_SESSION=;expires=Mon, 05 Jul 2000 00:00:00 GMT;path=/;';"
+		)
+	end)
 })
