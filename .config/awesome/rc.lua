@@ -37,6 +37,7 @@ tmux       = require('visor.tmux')
 music      = require('visor.music')
 calendar   = require('visor.calendar')
 typeAndRun = require('visor.typeAndRun')
+network    = require('visor.netPopup')
 
 import("config/layouts")
 import("config/tags")

@@ -75,17 +75,14 @@ cpuWidget = createWidget(vicious.widgets.cpu, "<span font_desc='Consolas,10'>$1%
 
 netWidget = createWidget(vicious.widgets.net, "<span font_desc='Consolas,10'><span color='#CC9393'>${em1 down_kb}</span> <span color='#7F9F7F'>${em1 up_kb}</span></span>", 5, {
 	icon = theme.icon_down,
-	icon_after = theme.icon_up,
-	tooltip = function()
-		local text = awful.util.pread("ifstat em1")
-		text = awful.util.escape(text)
-		text = text:gsub("^([^\n]+)\n", "<span color='#ffffff'>%1</span>\n", 1)
-		return
-			"<span font='Consolas 10' color='#cccccc'>"
-			.. text
-			.. "</span>"
-	end
+	icon_after = theme.icon_up
 })
+netWidget:connect_signal('mouse::enter', function ()
+	network.show()
+end)
+netWidget:connect_signal('mouse::leave', function ()
+	network.hide()
+end)
 
 --[[
 -- -- Keyboard map indicator and changer
