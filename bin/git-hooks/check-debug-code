@@ -1,7 +1,8 @@
 #!/usr/bin/bash
 
 FORBIDDEN='var_export\|error_log\|console\.log'
-git diff --cached --name-only \
+git diff --cached --name-status \
+	| grep -ve '^D' | cut -f 2 \
 	| grep -E '\.(js|php|css)$' \
 	| GREP_COLOR='4;5;37;41' xargs grep --color --with-filename -n -e $FORBIDDEN \
 	&& echo "COMMIT REJECTED Found forbidden references. Please remove them before commiting" \
