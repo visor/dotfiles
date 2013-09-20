@@ -1,28 +1,42 @@
 groupAwesome = {
-	{ "manual",  terminal .. " -e man awesome" },
-	{ "config",  editor_cmd .. " ~/.config/awesome" },
-	{ "restart", awesome.restart },
-	{ "quit",    awesome.quit }
+	{ "&Manual",  terminal .. " -e man awesome" },
+	{ "&Config",  editor_cmd .. " ~/.config/awesome" },
+	{ "&Restart", awesome.restart },
+	{ "&Quit",    awesome.quit }
 }
 
 groupSystem = {
-	{ "shutdown", 'dbus-send --system --print-reply --dest="org.freedesktop.login1" /org/freedesktop/login1 org.freedesktop.login1.Manager.PowerOff boolean:true' },
-	{ "reboot",   'dbus-send --system --print-reply --dest="org.freedesktop.login1" /org/freedesktop/login1 org.freedesktop.login1.Manager.Reboot boolean:true' }
+	{ "&Shutdown", 'dbus-send --system --print-reply --dest="org.freedesktop.login1" /org/freedesktop/login1 org.freedesktop.login1.Manager.PowerOff boolean:true' },
+	{ "&Reboot",   'dbus-send --system --print-reply --dest="org.freedesktop.login1" /org/freedesktop/login1 org.freedesktop.login1.Manager.Reboot boolean:true' }
 }
 
 groupChats = {
+	{ "&psi",   "psi-plus" },
+	{ "&Skype", "skype" },
 }
 
 groupWork = {
+	{ "&PHPStorm", "phpstorm" }
 }
 
 groupBrowsers = {
 }
 
-mainMenuItems = {
-	{ "awesome",  groupAwesome },
-	{ "system",   groupSystem },
-	{ "terminal", terminal }
+groupScreencast = {
+	{ "&Left screen",  terminal .. " -e /home/visor/bin/recordings/left" },
+	{ "&Right screen", terminal .. " -e /home/visor/bin/recordings/right" },
 }
 
-mainmenu = awful.menu({ items = mainMenuItems })
+mainMenuItems = {
+	{ "&Work",     groupWork },
+	{ "&System",   groupSystem },
+	{ "&Record",   groupScreencast },
+	{ "—————————————————" },
+	{ "&Awesome",  groupAwesome },
+	{ "&Terminal", terminal }
+}
+
+mainmenu = awful.menu({
+	items = mainMenuItems,
+	theme = { width = 150 }
+})
