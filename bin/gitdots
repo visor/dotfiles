@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+dir=`pwd`
+file=$1
+cd ~ && git add -f "$dir/$file"
