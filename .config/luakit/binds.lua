@@ -409,20 +409,36 @@ add_binds("normal", {
 	key({"Control", "Shift"}, "R", "Restart luakit (reloading configs).",
 		function (w) w:restart() end),
 
-	-- Window
-	buf("^ZZ$", "Quit and save the session.",
+	buf("^~ZZ$", "Quit and save the session.",
 		function (w) w:save_session() w:close_win() end),
 
-	buf("^ZQ$", "Quit and don't save the session.",
+	buf("^~ZQ$", "Quit and don't save the session.",
 		function (w) w:close_win() end),
 
-	buf("^D$",  "Quit and don't save the session.",
-		function (w) w:close_win() end),
-
-	-- Enter passthrough mode
 	key({"Control"}, "z",
 		"Enter `passthrough` mode, ignores all luakit keybindings.",
 		function (w) w:set_mode("passthrough") end),
+
+	key({}, "Z", "Просмотр YouTube ролика под курсором или на текущей странице",
+		function (w)
+			local uri = w.view.hovered_uri or w.view.uri
+			if uri then
+				luakit.spawn(string.format(
+					"%s -e youtube-viewer -I %q",
+					globals.term, uri
+				))
+			end
+	end),
+	key({}, "X", "Скачать ролик",
+		function (w)
+			local uri = w.view.hovered_uri or w.view.uri
+			if uri then
+				luakit.spawn(string.format(
+					"%s -e cclive -f best --output-dir %q --exec='mplayer \"%%f\"' %q",
+					globals.term, os.getenv("HOME") .."/Videos/unsorted", uri
+				))
+			end
+	end),
 })
 
 add_binds("insert", {

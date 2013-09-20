@@ -1,3 +1,6 @@
 [submodule ".config/awesome/vicious"]
 	path = .config/awesome/vicious
 	url = http://git.sysphere.org/vicious
+[submodule "/home/visor/.local/lib/youtube-viewer"]
+	path = /home/visor/.local/lib/youtube-viewer
+	url = git@github.com:trizen/youtube-viewer.git
