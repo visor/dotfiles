@@ -145,6 +145,14 @@ awful.rules.rules = {
 		properties = { floating = true, tag = tags[1][5] }
 	},
 	{
+		rule = { icon_name = "live" },
+		properties = { tag = tags[2][8] }
+	},
+	{
+		rule = { class = "MPlayer" },
+		properties = { floating = true, tag = tags[1][5] }
+	},
+	{
 		rule = { class = "gimp" },
 		properties = {
 			tag = tags[1][5],

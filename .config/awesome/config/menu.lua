@@ -3,10 +3,12 @@ local run = awful.util.spawn
 function cdnvideo(id)
 	local player="mplayer -vo x11 -fs -zoom"
 	local command=string.format(
-		terminal .. " -name live -e livestreamer -p '%s' 'rtmp://aloha.cdnvideo.ru/rr3/%s.stream' best",
+		terminal .. " -n live -name live -e livestreamer -p '%s' 'rtmp://aloha.cdnvideo.ru/rr3/%s.stream' best",
 		player, id
 	)
 	run(command)
+	awful.screen.focus(1)
+	awful.tag.viewonly(tags[1][5])
 end
 
 groupAwesome = {
@@ -36,7 +38,8 @@ groupBrowsers = {
 groupTv = {
 	{ "Первый канал", function () cdnvideo("339") end },
 	{ "Россия 1",     function () cdnvideo("12972") end },
-	{ "Россия 2",     function () cdnvideo("1257") end }
+	{ "Россия 2",     function () cdnvideo("1257") end },
+	{ "CTC",          function () cdnvideo("1255") end },
 }
 
 groupScreencast = {
