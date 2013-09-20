@@ -69,3 +69,5 @@ if [ -n "$TMUX" ]; then
 	export COLORTERM=xterm-256color
 #	export COLORTERM=xterm-256color
 fi
+
+alias zreload=". ~/.zshrc"
