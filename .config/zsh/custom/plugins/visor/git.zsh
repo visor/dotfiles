@@ -79,3 +79,5 @@ alias prodd='gco production'
 
 
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
+
+alias dot=gitdots
