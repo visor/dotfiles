@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+curl http://rp5.ru/xml/1360/00000/ru > ~/.local/share/weather.xmlc
