@@ -4,3 +4,6 @@
 [submodule "/home/visor/.local/lib/youtube-viewer"]
 	path = /home/visor/.local/lib/youtube-viewer
 	url = git@github.com:trizen/youtube-viewer.git
+[submodule ".local/lib/livestreamer"]
+	path = .local/lib/livestreamer
+	url = git@github.com:chrippa/livestreamer.git
