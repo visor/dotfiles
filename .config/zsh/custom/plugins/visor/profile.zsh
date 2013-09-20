@@ -5,8 +5,6 @@ export TERM=rxvt
 export COLORTERM=rxvt
 export WINDOW_MANAGER=xmonad
 
-export PATH
-
 export JAVA_HOME=/usr/java/latest
 export PATH=$PATH:$JAVA_HOME/bin:/var/www/hosts/php-tools/bin:$HOME/bin
 
