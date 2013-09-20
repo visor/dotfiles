@@ -6,6 +6,7 @@ source $ZSH_VISOR/functions.zsh
 source $ZSH_VISOR/aliases.zsh
 source $ZSH_VISOR/git.zsh
 source $ZSH_VISOR/rpm.zsh
+source $ZSH_VISOR/media.zsh
 
 source $ZSH_VISOR/virtual-hosts.zsh
 source $ZSH_VISOR/manage.zsh
