@@ -21,3 +21,4 @@ alias json-decode="php -r 'var_export(json_decode(file_get_contents(\"php://stdi
 #alias vimt="vim -u $HOME/.config/vim-test/.vimrc"
 alias clr="sudo /usr/local/bin/trunc "
 alias mkdd="mkdir `date +%Y.%m.%d`; cd `date +%Y.%m.%d`"
+alias wwget="wget -Sbo ~/tmp/wget.log --content-disposition"
