@@ -23,16 +23,19 @@ groupSystem = {
 	{ "&Reboot",   'dbus-send --system --print-reply --dest="org.freedesktop.login1" /org/freedesktop/login1 org.freedesktop.login1.Manager.Reboot boolean:true' }
 }
 
-groupChats = {
+groupWork = {
+	{ "&PHPStorm", "phpstorm", __dir__ .. "/icons/apps/phpstorm.png" }
+}
+
+groupInternet = {
+	{ "&Luakit", "luakit" },
+	{ "&Firefox", "firefox" },
+	{ "&Google Chrome", "google-chrome" },
+	{ "—————————————————" },
+	{ "&Mail", "thunderbird"},
+	{ "—————————————————" },
 	{ "&psi",   "psi-plus" },
 	{ "&Skype", "skype" },
-}
-
-groupWork = {
-	{ "&PHPStorm", "phpstorm" }
-}
-
-groupBrowsers = {
 }
 
 groupTv = {
@@ -49,10 +52,11 @@ groupScreencast = {
 
 mainMenuItems = {
 	{ "&Work",     groupWork },
-	{ "&System",   groupSystem },
+	{ "&Internet", groupInternet },
 	{ "&TV",       groupTv },
 	{ "&Record",   groupScreencast },
 	{ "—————————————————" },
+	{ "&System",   groupSystem },
 	{ "&Awesome",  groupAwesome },
 	{ "&Terminal", terminal }
 }
