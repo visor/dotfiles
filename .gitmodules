@@ -7,3 +7,6 @@
 [submodule ".local/lib/livestreamer"]
 	path = .local/lib/livestreamer
 	url = git@github.com:chrippa/livestreamer.git
+[submodule ".local/lib/turses"]
+	path = .local/lib/turses
+	url = git@github.com:alejandrogomez/turses.git
