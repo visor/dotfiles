@@ -1,4 +1,5 @@
 local run = awful.util.spawn
+local sep = { "—————————————————" }
 
 function cdnvideo(id)
 	local player="mplayer -vo x11 -fs -zoom"
@@ -31,9 +32,9 @@ groupInternet = {
 	{ "&Luakit", "luakit" },
 	{ "&Firefox", "firefox" },
 	{ "&Google Chrome", "google-chrome" },
-	{ "—————————————————" },
+	sep,
 	{ "&Mail", "thunderbird"},
-	{ "—————————————————" },
+	sep,
 	{ "&psi",   "psi-plus" },
 	{ "&Skype", "skype" },
 }
@@ -55,7 +56,7 @@ mainMenuItems = {
 	{ "&Internet", groupInternet },
 	{ "&TV",       groupTv },
 	{ "&Record",   groupScreencast },
-	{ "—————————————————" },
+	sep,
 	{ "&System",   groupSystem },
 	{ "&Awesome",  groupAwesome },
 	{ "&Terminal", terminal }
