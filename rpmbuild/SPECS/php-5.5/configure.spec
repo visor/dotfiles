@@ -1,0 +1,82 @@
+./configure \
+	--prefix=%{_php_root} \
+	--exec-prefix=%{_php_root} \
+	--bindir=%{_php_root}/bin \
+	--sbindir=%{_php_root}/sbin \
+	--sysconfdir=%{_php_root}/etc \
+	--datadir=%{_php_root}/share \
+	--includedir=%{_php_root}/include \
+	--libdir=%{_php_root}/lib64 \
+	--libexecdir=%{_php_root}/libexec \
+	--localstatedir=%{_php_root}/var \
+	--sharedstatedir=%{_php_root}/com \
+	--mandir=%{_php_root}/man \
+	--infodir=%{_php_root}/info \
+	--with-config-file-path=%{_php_root}/etc \
+	--with-config-file-scan-dir=%{_php_root}/conf.d \
+	--with-libdir=lib64 \
+	--disable-debug \
+	--disable-all \
+	--disable-cgi \
+	--enable-fpm \
+	--with-fpm-user=php \
+	--with-fpm-group=php \
+	--enable-maintainer-zts \
+	--with-openssl \
+	--with-readline \
+	--with-libedit \
+	--with-sqlite3 \
+	--without-pear \
+	--enable-sockets \
+	--enable-dom \
+	--enable-libxml \
+	--enable-filter \
+	--enable-mysqlnd \
+	--enable-pdo \
+	--with-pdo-sqlite \
+	--with-pdo-mysql=mysqlnd --with-mysql-sock=/var/lib/mysql/mysql.sock \
+	--enable-session --enable-hash --with-mhash \
+	--enable-bcmath=shared \
+	--with-bz2=shared \
+	--enable-calendar=shared \
+	--enable-ctype=shared \
+	--with-curl=shared \
+	--enable-dba=shared \
+	--enable-exif=shared \
+	--enable-fileinfo=shared \
+	--with-gd=shared --with-jpeg-dir --with-png-dir --with-zlib-dir --with-xpm-dir=/usr --with-freetype-dir --with-t1lib --enable-gd-native-ttf --disable-gd-jis-conv \
+	--with-iconv=shared \
+	--enable-intl=shared \
+	--enable-json=shared \
+	--enable-mbstring=shared \
+	--with-mysql=shared,mysqlnd \
+	--enable-pcntl=shared \
+	--enable-phar=shared \
+	--enable-posix=shared \
+	--enable-shmop=shared \
+	--enable-simplexml=shared \
+	--enable-soap=shared \
+	--enable-tokenizer=shared \
+ 	--with-tidy=shared \
+	--enable-wddx=shared \
+	--enable-xml=shared \
+	--enable-xmlreader=shared \
+ 	--with-xmlrpc=shared \
+	--enable-xmlwriter=shared \
+	--with-xsl=shared \
+	--enable-zip=shared \
+	--enable-ftp=shared \
+	--with-gearman=shared \
+	--enable-http=shared --with-http-shared-deps=no --with-http-magic-mime \
+	--enable-igbinary=shared \
+	--with-imagick=shared \
+	--with-libevent=shared \
+	--enable-mongo=shared \
+	--enable-proctitle=shared \
+	--enable-runkit=shared --enable-runkit-modify --enable-runkit-super --enable-runkit-sandbox \
+	--with-sphinx=shared \
+	--enable-xdebug=shared \
+	--with-pgsql=shared --with-pdo-pgsql=shared \
+	--enable-yaf=shared \
+	--enable-opcache=shared \
+###

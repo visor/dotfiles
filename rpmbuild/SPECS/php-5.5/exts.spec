@@ -1,4 +1,3 @@
-%include %{_topdir}/SPECS/php-common/ext/apc.spec
 %include %{_topdir}/SPECS/php-common/ext/bcmath.spec
 %include %{_topdir}/SPECS/php-common/ext/bz2.spec
 %include %{_topdir}/SPECS/php-common/ext/calendar.spec
@@ -20,6 +19,7 @@
 %include %{_topdir}/SPECS/php-common/ext/mbstring.spec
 %include %{_topdir}/SPECS/php-common/ext/mongo.spec
 %include %{_topdir}/SPECS/php-common/ext/mysql.spec
+%include %{_topdir}/SPECS/php-5.5/ext/opcache.spec
 %include %{_topdir}/SPECS/php-common/ext/pcntl.spec
 %include %{_topdir}/SPECS/php-common/ext/pgsql.spec
 %include %{_topdir}/SPECS/php-common/ext/phar.spec
