@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+test -d ~/mnt/router || mkdir -p ~/mnt/router
+sudo mount -t cifs -o credentials=~/.config/private/router-pass //192.168.1.1/share ~/mnt/router
