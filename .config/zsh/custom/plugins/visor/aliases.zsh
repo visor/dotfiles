@@ -11,6 +11,7 @@ alias books="cd /data/Books"
 alias prj="cd ~/Documents/Projects"
 alias prg="cd /usr/programs"
 alias dsrc="cd /data/src"
+alias exe="chmod +x"
 
 #selenium related
 alias view-selenium="vncviewer localhost:5999 >/dev/null 2>&1 &"
