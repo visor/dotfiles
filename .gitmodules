@@ -10,3 +10,6 @@
 [submodule ".local/lib/turses"]
 	path = .local/lib/turses
 	url = git@github.com:alejandrogomez/turses.git
+[submodule ".local/lib/gcalccli"]
+	path = .local/lib/gcalccli
+	url = git@github.com:insanum/gcalcli.git
