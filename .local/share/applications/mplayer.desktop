@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=MPlayer
+Exec=mplayer %U
+Terminal=false
+NoDisplay=true
+Categories=AudioVideo;Player;Recorder;

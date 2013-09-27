@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Zathura
+Comment[ru]=Минималистичный просмотрщик документов
+Exec=zathura %f
+Terminal=false
+NoDisplay=true
+Categories=Office;Viewer;
+MimeType=application/pdf;
