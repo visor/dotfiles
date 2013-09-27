@@ -13,3 +13,6 @@
 [submodule ".local/lib/gcalccli"]
 	path = .local/lib/gcalccli
 	url = git@github.com:insanum/gcalcli.git
+[submodule ".local/lib/dompdf"]
+	path = .local/lib/dompdf
+	url = git@github.com:dompdf/dompdf.git

@@ -1,0 +1,9 @@
+#!/bin/env php
+<?php
+
+define('DOMPDF_ENABLE_PHP', false);
+define('DOMPDF_ENABLE_REMOTE', true);
+define('DOMPDF_CHROOT', getCwd());
+define('DOMPDF_TEMP_DIR', sys_get_temp_dir());
+define('DOMPDF_FONT_CACHE', sys_get_temp_dir().'/fonts');
+include __DIR__ . '/../.local/lib/dompdf/dompdf.php';
