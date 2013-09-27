@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=LuaKit
+Exec=luakit %f
+Terminal=false
+NoDisplay=true
+Categories=Browser;Internet;
+MimeType=application/pdf;
