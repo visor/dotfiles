@@ -85,10 +85,6 @@ awful.rules.rules = {
 		rule = { class = "Mail" },
 		properties = { tag = tags[1][3] }
 	},
-	{
-		rule = { class = "qbittorrent" },
-		properties = { tag = tags[1][3] }
-	},
 	-- 4.ims
 	{
 		rule = { class = "Xchat" },
@@ -167,6 +163,17 @@ awful.rules.rules = {
 			floating = false
 
 		}
+	},
+	-- 7 (2) todo
+	{
+		rule = { class = "Cherrytree" },
+		properties = {
+			tag = tags[2][7],
+			floating = false,
+			maximized_vertical   = true,
+			maximized_horizontal = true
+		}
 	}
+}
 }
 -- }}}
