@@ -11,16 +11,6 @@ awful.rules.rules = {
 			size_hints_honor = false
 		}
 	},
-	{
-		rule_any = {
-			class = {"feh", "Display"}, name = {"feh", "display"}
-		},
-		properties = {
-			floating = true,
-			callback = function (c) awful.placement.centered(c) end
-		}
-	},
-
 	-- 1.dev
 	{
 		rule = { class = "Sublime_text" },
@@ -174,6 +164,5 @@ awful.rules.rules = {
 			maximized_horizontal = true
 		}
 	}
-}
 }
 -- }}}

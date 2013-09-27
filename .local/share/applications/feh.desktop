@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Feh
+Comment[ru]=Минималистичный просмотрщик изображений
+Exec=feh -xd -. --start-at %f "`pwd`"
+Terminal=false
+NoDisplay=true
+Categories=Office;Viewer;
