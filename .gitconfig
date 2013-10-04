@@ -33,7 +33,7 @@
 
 [help]
 	format = html
-	browser = google-chrome
+	browser = luakit
 	autocorrect = 1
 
 [alias]

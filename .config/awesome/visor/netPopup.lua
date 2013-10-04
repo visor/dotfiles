@@ -21,9 +21,9 @@ show = function ()
 			.. "</span>"
 	end
 --]]
-	dbg('show network tool')
+--	dbg('show network tool')
 end
 
 hide = function ()
-	dbg('hide network tool')
+--	dbg('hide network tool')
 end
