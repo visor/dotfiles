@@ -68,13 +68,15 @@
 
 [merge]
 	log  = true
-	tool = meld
-
-[mergetool.meld]
-	path = /usr/bin/meld
+	tool = vimdiff
 
 [status]
 	relativePaths = 0
 
 [push]
 	default = simple
+
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
