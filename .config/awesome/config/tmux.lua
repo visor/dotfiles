@@ -29,20 +29,27 @@ tmux.config       = {
 		tag = 6,
 		session = {}
 	},
+	music = {
+		title = "Music",
+		screen = 2,
+		tag = 6,
+		session = {
+			"new-session -s 'Music' cmus",
+			"rename-window cmus",
+			"setw -t 1 monitor-activity off",
+		},
+	},
 	tools = {
 		title = "Tools",
 		screen = 2,
 		tag = 6,
 		session = {
-			"new-session -s 'Tools' cmus",
-			"rename-window cmus",
-			"neww rtorrent",
+			"new-session -s 'Tools' rtorrent",
 			"rename-window torrent",
 			"neww /home/tools/bin/torrents-sorter.php",
 			"rename-window torrents-sorter",
 			"setw -t 1 monitor-activity off",
 			"setw -t 2 monitor-activity off",
-			"setw -t 3 monitor-activity off",
 			"select-window -t 1"
 		},
 	},

@@ -112,11 +112,11 @@ awful.rules.rules = {
 		callback = function (c) visor.imBuddy(c, 400, true); end
 	},
 	{
-		rule_any = { class = { "psi", "Psi" } }, except = { instance = "main" },
+		rule_any = { class = { "Psi-plus" } }, except = { instance = "main" },
 		properties = { tag = tags[1][4] }
 	},
 	{
-		rule = { class = "psi", instance = "main" },
+		rule = { class = "Psi-plus", instance = "main" },
 		properties = {
 			tag = tags[1][4],
 			floating             = true,

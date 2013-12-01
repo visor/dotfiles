@@ -1,6 +1,24 @@
 local run = awful.util.spawn
 local sep = { "—————————————————" }
 
+function proTv(id, name)
+	local rtmpBase  = "rtmp://178.218.212.102/rtplive"
+	local httpBase  = "http://pro-tv.net"
+	local streamUrl = rtmpBase .. "/" .. id .. ".stream"
+	local swfUrl    = httpBase .. "/player/player.swf"
+	local pageUrl   = string.format(httpBase .. "/%s-%s.html", id, name)
+	local command = terminal .. " -n live -name live -e "
+		.. __dir__ .. "/scripts/tv"
+			.. " " .. streamUrl
+			.. " " .. swfUrl
+			.. " " .. pageUrl
+			.. " " .. rtmpBase
+
+	run(command)
+	awful.screen.focus(1)
+	awful.tag.viewonly(tags[1][5])
+end
+
 function cdnvideo(id)
 	local player="mplayer -vo x11 -fs -zoom"
 	local command=string.format(
@@ -40,10 +58,12 @@ groupInternet = {
 }
 
 groupTv = {
-	{ "Первый канал", function () cdnvideo("339") end },
-	{ "Россия 1",     function () cdnvideo("12972") end },
-	{ "Россия 2",     function () cdnvideo("1257") end },
-	{ "CTC",          function () cdnvideo("1255") end },
+	{ "Первый канал", function () proTv(  "339", "pervyjj-kanal") end },
+	{ "Россия 1",     function () proTv("12972", "rossija-1") end },
+	{ "Россия 2",     function () proTv( "1257", "rossia-2") end },
+	{ "CTC",          function () proTv( "1255", "sts") end },
+	{ "НТВ",          function () proTv( "1256", "ntv") end },
+	{ "Россия 24",    function () proTv(    "4", "vesti") end },
 }
 
 groupScreencast = {

@@ -73,6 +73,7 @@ cpuWidget = createWidget(vicious.widgets.cpu, "<span font_desc='Consolas,10'>$1%
 	end
 })
 
+--[[
 netWidget = createWidget(vicious.widgets.net, "<span font_desc='Consolas,10'><span color='#CC9393'>${em1 down_kb}</span> <span color='#7F9F7F'>${em1 up_kb}</span></span>", 5, {
 	icon = theme.icon_down,
 	icon_after = theme.icon_up
@@ -83,6 +84,7 @@ end)
 netWidget:connect_signal('mouse::leave', function ()
 	network.hide()
 end)
+--]]
 
 --[[
 -- -- Keyboard map indicator and changer

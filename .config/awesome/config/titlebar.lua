@@ -52,7 +52,7 @@ for s = 1, screen.count() do
 		right_layout:add(sepWidget)
 		right_layout:add(memWidget)
 		right_layout:add(sepWidget)
-		right_layout:add(netWidget)
+		-- right_layout:add(netWidget)
 		right_layout:add(sepWidget)
 		right_layout:add(wibox.widget.systray())
 		right_layout:add(clockWidget)

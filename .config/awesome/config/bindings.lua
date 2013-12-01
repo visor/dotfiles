@@ -31,7 +31,8 @@ globalkeys = awful.util.table.join(globalkeys,
 	-- awful.key({ modkey }, "e", function () scratch.drop("urxvt -name mc -e mc", "center", "center", 1280, 1000) end, "Midnight Commander"),
 	awful.key({ modkey }, "e", function () tmux.show("files") end, "Midnight Commander"),
 	awful.key({ modkey }, "t", function () tmux.show("terminal") end, "Терминал"),
-	awful.key({ modkey }, "=", function () tmux.show("tools") end, "Музыка, торренты и т.п."),
+	awful.key({ modkey }, "-", function () tmux.show("music") end, "Музыка"),
+	awful.key({ modkey }, "=", function () tmux.show("tools") end, "Торренты"),
 	-- awful.key({ modkey }, "c", function () scratch.drop("cherrytree", "center", "center",           1280, 1000) end, "Заметки"),
 	-- awful.key({ modkey, "Control" }, "m", function ()
 	-- 	scratch.drop("urxvt -title MOCPlayer -e mocp", "center", "center", 1280, 1000)
@@ -177,12 +178,23 @@ end
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it works on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
+local numpad_map = { 87, 88, 89, 83, 84, 85, 79, 80, 81 }
 for i = 1, keynumber do
 	globalkeys = awful.util.table.join(globalkeys,
 		awful.key({ modkey }, "#" .. i + 9, function ()
-			local screen = mouse.screen
-			if tags[screen][i] then
-				awful.tag.viewonly(tags[screen][i])
+			if tags[1][i] then
+				awful.screen.focus(1)
+				awful.tag.viewonly(tags[1][i])
+			end
+			-- local screen = mouse.screen
+			-- if tags[screen][i] then
+				-- awful.tag.viewonly(tags[screen][i])
+			-- end
+		end),
+		awful.key({ modkey }, "#" .. numpad_map[i], function ()
+			if tags[2][i] then
+				awful.screen.focus(2)
+				awful.tag.viewonly(tags[2][i])
 			end
 		end),
 		awful.key({ modkey, "Control" }, "#" .. i + 9, function ()
