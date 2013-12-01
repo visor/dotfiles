@@ -21,6 +21,52 @@ function pull_all_branches() {
 	git checkout $current >/dev/null 2>&1
 }
 
+function tickets() {
+	git branch --list | grep ticket-
+}
+
+function ticket() {
+	ticket="$1"
+
+	if [ "" = "$ticket" ]; then
+		echo "Usage: $0 <name>"
+		return
+	fi
+
+	ticket="ticket-$ticket"
+	current=$(current_branch)
+	if [ "$current" = "$ticket" ]; then
+		return
+	fi
+
+	exists=`git branch --list --no-color | grep "$ticket"`
+	if [ "" = "$exists" ]; then
+		git checkout -b "$ticket"
+	else
+		git checkout "$ticket"
+	fi
+}
+
+function gupm() {
+	source=${1:-master}
+	echo $source
+	current=$(current_branch)
+	changed=$(git status -s | grep -e '^.M')
+
+	if ! [ "" = "$changed" ]; then
+		git stash save
+	fi
+
+	git checkout $source \
+	&& git pull origin $source \
+	&& git checkout $current \
+	&& git rebase $source
+
+	if ! [ "" = "$changed" ]; then
+		git stash pop
+	fi
+}
+
 function up_from_master() {
 	current=$(current_branch)
 	changed=$(git status -s | grep -e '^.M')
@@ -67,12 +113,13 @@ alias gta="gitk --all &"
 alias gmt='git mergetool --tool=meld -y'
 alias glast='git log --stat -n 1'
 alias lol="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias tct=ticket
 
 alias grm=up_from_master
 alias gbak="git stash save"
 alias gres="git stash pop"
 
-alias dev='gco dev'
+alias dev='gco local-dev'
 alias master='gco master'
 alias prod='gco prod'
 alias prodd='gco production'
