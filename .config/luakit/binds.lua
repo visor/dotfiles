@@ -637,5 +637,9 @@ add_cmds({
 			.. "document.location.reload();"
 			.. "document.cookie='XDEBUG_SESSION=;expires=Mon, 05 Jul 2000 00:00:00 GMT;path=/;';"
 		)
+	end),
+	cmd("mailcatcher", "Открыть MailCatcher", function (w)
+		w:new_tab()
+		w:navigate("http://mailcatcher.lc:1080/")
 	end)
 })
