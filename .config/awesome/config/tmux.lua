@@ -39,10 +39,10 @@ tmux.config       = {
 			"setw -t 1 monitor-activity off",
 		},
 	},
-	tools = {
-		title = "Tools",
+	torrent = {
+		title = "Torrent",
 		screen = 2,
-		tag = 6,
+		tag = 3,
 		session = {
 			"new-session -s 'Tools' rtorrent",
 			"rename-window torrent",
