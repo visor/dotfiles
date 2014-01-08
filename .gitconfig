@@ -50,6 +50,7 @@
 	zip = archive --format zip -9 HEAD
 	kado = !gitk --all --date-order
 	latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short) [%(committername)]'
+	branchdiff = !git difftool $(git merge-base master HEAD)
 
 [i18n]
 	commitencoding = UTF-8
