@@ -154,6 +154,14 @@ awful.rules.rules = {
 
 		}
 	},
+	{
+		rule = { class = "Gimp", type = "dialog" },
+		properties = {
+			tag = tags[1][5],
+			floating = true,
+			callback = function (c) awful.placement.centered(c) end
+		}
+	},
 	-- 7 (2) todo
 	{
 		rule = { class = "Cherrytree" },
