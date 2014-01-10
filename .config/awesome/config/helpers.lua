@@ -108,6 +108,7 @@ function notify(title, text)
 end
 
 function dbg(...)
+	local arg = table.pack(...)
 	local num = table.maxn(arg)
 	local text = "<span color='"..colors.header.."'>dbg</span> <span color='"..colors.count.."'>#"..num.."</span>"
 	local depth = 2
