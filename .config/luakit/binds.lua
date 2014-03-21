@@ -200,17 +200,18 @@ add_binds("normal", {
 			if not m.count then w:scroll{ y = 0 } else return false end
 		end),
 
-	key({"Control"}, "d", "Scroll half page down.",
-		function (w) w:scroll{ ypagerel =  0.5 } end),
+	-- key({"Control"}, "d", "Scroll half page down.",
+	-- 	function (w) w:scroll{ ypagerel =  0.5 } end),
 
 	key({"Control"}, "u", "Scroll half page up.",
-		function (w) w:scroll{ ypagerel = -0.5 } end),
+		function (w) w:toggle_source(not o.bang and true or nil) end),
+		-- function (w) w:scroll{ ypagerel = -0.5 } end),
 
 	key({}, "space", "Scroll page down.",
-		function (w) w:scroll{ ypagerel =  1.0 } end),
+		function (w) w:scroll{ ypagerel =  0.5 } end),
 
 	key({"Shift"}, "space", "Scroll page up.",
-		function (w) w:scroll{ ypagerel = -1.0 } end),
+		function (w) w:scroll{ ypagerel = -0.5 } end),
 
 	key({}, "BackSpace", "Scroll page up.",
 		function (w) w:scroll{ ypagerel = -1.0 } end),
@@ -640,6 +641,10 @@ add_cmds({
 	end),
 	cmd("mailcatcher", "Открыть MailCatcher", function (w)
 		w:new_tab()
-		w:navigate("http://mailcatcher.lc:1080/")
+		w:navigate("http://localhost:1080/")
+	end),
+	cmd("todo", "Открыть myTidyTodo", function (w)
+		w:new_tab()
+		w:navigate("http://todo.lc/#alltasks")
 	end)
 })
