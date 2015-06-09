@@ -36,6 +36,13 @@ awful.rules.rules = {
 		}
 	},
 	{
+		rule = { class = "Firefox", instance = "Devtools" },
+		properties = {
+			tag = tags[2][1],
+			floating = false
+		}
+	},
+	{
 		rule = { class = "Google-chrome", role = "browser" },
 		properties = {
 			tag = tags[2][2],
@@ -79,7 +86,7 @@ awful.rules.rules = {
 	{
 		rule = { class = "Xchat" },
 		properties = {
-			tag                  = tags[1][4],
+			tag                  = tags[2][4],
 			floating             = false,
 			maximized_vertical   = true,
 			maximized_horizontal = true
@@ -87,11 +94,15 @@ awful.rules.rules = {
 	},
 	{
 		rule = { class = "Skype" },
-		properties = { tag = tags[1][4] }
+		properties = {
+			tag = tags[2][4],
+			size_hints_honor = false
+		}
 	},
 	{
 		rule = { class = "Skype", name = "victor.karamzin - Skype™" },
 		properties = {
+			floating             = true,
 			switchtotag          = true,
 			maximized_vertical   = true,
 			maximized_horizontal = false
@@ -100,28 +111,29 @@ awful.rules.rules = {
 	},
 	{
 		rule = { class = "Pidgin" },
-		properties = { tag = tags[1][4] }
+		properties = { tag = tags[2][4] }
 	},
 	{
 		rule = { class = "Pidgin", role = "buddy_list" },
 		properties = {
+			tag                  = tags[2][4],
 			floating             = true,
 			maximized_vertical   = true,
-			maximized_horizontal = false
+			maximized_horizontal = true
 		},
 		callback = function (c) visor.imBuddy(c, 400, true); end
 	},
 	{
 		rule_any = { class = { "Psi-plus" } }, except = { instance = "main" },
-		properties = { tag = tags[1][4] }
+		properties = { tag = tags[2][4] }
 	},
 	{
 		rule = { class = "Psi-plus", instance = "main" },
 		properties = {
-			tag = tags[1][4],
+			tag = tags[2][4],
 			floating             = true,
 			maximized_vertical   = true,
-			maximized_horizontal = false
+			maximized_horizontal = true
 		},
 		callback = function (c) visor.imBuddy(c, 400, true); end
 	},
@@ -141,7 +153,7 @@ awful.rules.rules = {
 	{
 		rule = { class = "gimp" },
 		properties = {
-			tag = tags[1][5],
+			tag = tags[1][4],
 			floating = false
 
 		}
@@ -149,7 +161,7 @@ awful.rules.rules = {
 	{
 		rule = { class = "Gimp" },
 		properties = {
-			tag = tags[1][5],
+			tag = tags[1][4],
 			floating = false
 
 		}
@@ -157,7 +169,7 @@ awful.rules.rules = {
 	{
 		rule = { class = "Gimp", type = "dialog" },
 		properties = {
-			tag = tags[1][5],
+			tag = tags[1][4],
 			floating = true,
 			callback = function (c) awful.placement.centered(c) end
 		}
@@ -170,6 +182,21 @@ awful.rules.rules = {
 			floating = false,
 			maximized_vertical   = true,
 			maximized_horizontal = true
+		}
+	},
+	-- 9 (2) games
+	{
+		rule = { class = "einstein" },
+		properties = {
+			tag = tags[2][9],
+			callback = function (c) awful.placement.centered(c) end
+		}
+	},
+	{
+		rule = { class = "dosbox" },
+		properties = {
+			tag = tags[2][9],
+			callback = function (c) awful.placement.centered(c) end
 		}
 	}
 }

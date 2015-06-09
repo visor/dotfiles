@@ -9,6 +9,6 @@ This extension uses libgearman library to provide API for communicating with gea
 
 
 %files ext-gearman
-%defattr(-,root,root)
+%defattr(0644,root,root)
 %{_php_root}/extensions/gearman.so
 %{_php_root}/conf.d/gearman.ini

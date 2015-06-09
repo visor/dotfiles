@@ -11,6 +11,6 @@ Execute code in restricted environment (sandboxing).
 
 
 %files ext-runkit
-%defattr(-,root,root)
+%defattr(0644,root,root)
 %{_php_root}/extensions/runkit.so
 %{_php_root}/conf.d/runkit.ini

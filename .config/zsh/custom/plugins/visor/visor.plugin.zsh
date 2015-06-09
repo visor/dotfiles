@@ -13,4 +13,6 @@ source $ZSH_VISOR/manage.zsh
 
 source $ZSH_VISOR/keys.zsh
 
+source $ZSH_VISOR/nano.zsh
+
 source $ZSH_VISOR/.private.zsh

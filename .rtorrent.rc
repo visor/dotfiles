@@ -1,4 +1,4 @@
-		#минимальное число пиров на торрент
+#минимальное число пиров на торрент
 min_peers = 1
 
 #максимальное число пиров на торрент
@@ -19,20 +19,6 @@ session = /home/visor/.tools/rtorrent/
 
 #rtorrent каждые 5 секунд проверяет этот каталог на новые *.torrent файлы
 #и если они есть то ставит их на закачку
-#schedule = watch_directory,5,5,load=/home/visor/Downloads/torrents/*.torrent
-#schedule = watch_directory_2,5,5,"load=/data/Video/.torrents/*.torrent,d.set_directory=/data/Video"
-#schedule = watch_directory_3,5,5,"load=/data/Video/Arrow/*.torrent,d.set_directory=/data/Video/Arrow"
-#schedule = watch_directory_4,5,5,"load=/data/Video/Mentalist/*.torrent,d.set_directory=/data/Video/Mentalist"
-#schedule = watch_directory_5,5,5,"load=/data/Video/Castle/*.torrent,d.set_directory=/data/Video/Castle"
-#schedule = watch_directory_6,5,5,"load=/data/Video/Elementary/*.torrent,d.set_directory=/data/Video/Elementary"
-#schedule = watch_directory_7,5,5,"load=/data/Video/TheBigBangTheory/*.torrent,d.set_directory=/data/Video/TheBigBangTheory"
-#schedule = watch_directory_10,5,5,"load=/data/Video/GameOfThrones/*.torrent,d.set_directory=/data/Video/GameOfThrones"
-#schedule = watch_directory_11,5,5,"load=/data/Video/Interny/*.torrent,d.set_directory=/data/Video/Interny"
-#schedule = watch_directory_12,5,5,"load=/data/Video/Borgias/*.torrent,d.set_directory=/data/Video/Borgias"
-
-#schedule = watch_directory_8,5,5,"load=/data/Video/UnPasoAdelante/*.torrent,d.set_directory=/data/Video/UnPasoAdelante"
-#schedule = watch_directory_9,5,5,"load=/data/Video/01/Sex/*.torrent,d.set_directory=/data/Video/01/Sex"
-#schedule = watch_directory_soprt,5,5,"load=/data/Video/Sport/*.torrent,d.set_directory=/data/Video/Sport"
 
 #номер порта (или нескольких портов) который открывает клиент для обмена данными
 port_range = 40890-40890

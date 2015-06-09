@@ -33,6 +33,7 @@ globalkeys = awful.util.table.join(globalkeys,
 	awful.key({ modkey }, "t", function () tmux.show("terminal") end, "Терминал"),
 	awful.key({ modkey }, "-", function () tmux.show("music") end, "Музыка"),
 	awful.key({ modkey }, "=", function () tmux.show("torrent") end, "Торренты"),
+	awful.key({ modkey }, "`", function () tmux.show("root") end, "Root"),
 	-- awful.key({ modkey }, "c", function () scratch.drop("cherrytree", "center", "center",           1280, 1000) end, "Заметки"),
 	-- awful.key({ modkey, "Control" }, "m", function ()
 	-- 	scratch.drop("urxvt -title MOCPlayer -e mocp", "center", "center", 1280, 1000)
@@ -59,7 +60,7 @@ globalkeys = awful.util.table.join(globalkeys,
 	keydoc.group("Теги"),
 	awful.key({ modkey }, "Left",  awful.tag.viewprev,        "Перейти на тег слева"),
 	awful.key({ modkey }, "Right", awful.tag.viewnext,        "Перейти на тег справа"),
-	awful.key({ modkey }, "`",     awful.tag.history.restore, "Предыдущий тег"),
+	awful.key({ modkey }, "[",     awful.tag.history.restore, "Предыдущий тег"),
 
 	keydoc.group(keydoc.defaultGroup),
 	awful.key({ modkey }, "Tab",
@@ -124,6 +125,8 @@ globalkeys = awful.util.table.join(globalkeys,
 		local m = awful.menu({
 			theme = { width = 400 },
 			items = {
+				{ "320", function() reWidth(320) end},
+				{ "420", function() reWidth(420) end},
 				{ "480", function() reWidth(480) end},
 				{ "600", function() reWidth(600) end},
 				{ "768", function() reWidth(768) end},
@@ -131,6 +134,8 @@ globalkeys = awful.util.table.join(globalkeys,
 				{ "1024", function() reWidth(1024) end},
 				{ "1280", function() reWidth(1280) end},
 				{ "1440", function() reWidth(1440) end},
+				{ "1600", function() reWidth(1600) end},
+				{ "1920", function() reWidth(1920) end},
 				{ "2048", function() reWidth(2048) end}
 			}
 		})

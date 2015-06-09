@@ -1,9 +1,6 @@
 [submodule ".config/awesome/vicious"]
 	path = .config/awesome/vicious
 	url = http://git.sysphere.org/vicious
-[submodule "/home/visor/.local/lib/youtube-viewer"]
-	path = /home/visor/.local/lib/youtube-viewer
-	url = git@github.com:trizen/youtube-viewer.git
 [submodule ".local/lib/livestreamer"]
 	path = .local/lib/livestreamer
 	url = git@github.com:chrippa/livestreamer.git
@@ -19,3 +16,15 @@
 [submodule ".local/lib/scruffy"]
 	path = .local/lib/scruffy
 	url = https://github.com/aivarsk/scruffy.git
+[submodule ".local/lib/tig"]
+	path = .local/lib/tig
+	url = git://github.com/jonas/tig.git
+[submodule ".local/lib/youtube-viewer"]
+	path = .local/lib/youtube-viewer
+	url = https://github.com/trizen/youtube-viewer.git
+[submodule "/home/visor/.local/lib/multi-mechanize"]
+	path = /home/visor/.local/lib/multi-mechanize
+	url = https://github.com/cgoldberg/multi-mechanize.git
+[submodule ".local/share/FiraCode"]
+	path = .local/share/FiraCode
+	url = https://github.com/tonsky/FiraCode.git

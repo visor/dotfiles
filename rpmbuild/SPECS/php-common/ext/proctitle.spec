@@ -9,6 +9,6 @@ This extension allows changing the current process' name on Linux and *BSD syste
 
 
 %files ext-proctitle
-%defattr(-,root,root)
+%defattr(0644,root,root)
 %{_php_root}/extensions/proctitle.so
 %{_php_root}/conf.d/proctitle.ini

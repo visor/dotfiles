@@ -26,7 +26,7 @@
 	--with-readline \
 	--with-libedit \
 	--with-sqlite3 \
-	--without-pear \
+	--with-pear \
 	--enable-sockets \
 	--enable-dom \
 	--enable-libxml \
@@ -79,4 +79,5 @@
 	--with-pgsql=shared --with-pdo-pgsql=shared \
 	--enable-yaf=shared \
 	--enable-opcache=shared \
+	--with-gmp=shared \
 ###

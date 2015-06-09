@@ -9,6 +9,6 @@ This package provides an interface for communicating with the MongoDB database i
 
 
 %files ext-mongo
-%defattr(-,root,root)
+%defattr(0644,root,root)
 %{_php_root}/extensions/mongo.so
 %{_php_root}/conf.d/mongo.ini

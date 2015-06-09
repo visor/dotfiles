@@ -1,8 +1,13 @@
-for s = 1, screen.count() do
-	tags[s] = awful.tag(
-		{ "dev", "web", "net", "im", "med", "cons", "todo", "∞", "game" },
-		s,
-		layouts[1]
-	)
-end
+tags[1] = awful.tag(
+	{ "dev", "web", "net", "gr", "vdo"},
+	1,
+	layouts[1]
+)
+tags[2] = awful.tag(
+	{ "dev", "web", "net", "im", "med", "cons", "todo", "∞", "game" },
+	2,
+	layouts[1]
+)
+
+
 awful.layout.set(awful.layout.webdev, tags[1][2])

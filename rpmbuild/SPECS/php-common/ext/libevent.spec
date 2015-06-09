@@ -9,6 +9,6 @@ This extension is a wrapper for libevent - event notification library.
 
 
 %files ext-libevent
-%defattr(-,root,root)
+%defattr(0644,root,root)
 %{_php_root}/extensions/libevent.so
 %{_php_root}/conf.d/libevent.ini

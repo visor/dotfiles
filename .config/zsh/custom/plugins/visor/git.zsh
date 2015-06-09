@@ -86,32 +86,86 @@ function up_from_master() {
 	fi
 }
 
+function git-local-branch() {
+	name="local-$1"
+
+	exists=`git branch --list --no-color | grep "$name"`
+	if [ "" = "$exists" ]; then
+		git checkout -b "$name"
+	else
+		git checkout "$name"
+	fi
+}
+
+function feature() {
+	name="feature-$1"
+	git checkout "$name"
+}
+
+function git-up-local() {
+	current=$(current_branch)
+	source=`echo $current | sed -e 's/^local\-//' -`
+	if [ "$current" = "$source" ]; then
+		return
+	fi
+	exists=`git branch -a --list --no-color | egrep "^\s+$source$"`
+	if [ "" = "$exists" ]; then
+		return
+	fi
+
+	gupm "$source"
+}
+
+function git-push-local() {
+	current=$(current_branch)
+	source=`echo $current | sed -e 's/^local\-//' -`
+
+	git-up-local
+
+	git checkout $source \
+	&& git merge $current \
+	&& git push origin $source
+
+
+	git checkout "$current"
+}
+
+function git-update-submodules() {
+	git submodule foreach 'ref=$(git symbolic-ref HEAD 2>/dev/null); ref=${ref#refs/heads/}; git pull origin $ref' \
+	&& git pull origin $(current_branch)
+}
+
 alias gg="git gui &"
 alias gs='git status -sb'
 
 alias ga='git add'
-alias gc='git commit -m'
+alias gc='git commit -S -m'
 alias gu='git pull'
 alias gp='git push'
 alias gb='git branch'
 alias gd='git diff'
 
+alias gsf="git submodule foreach"
+alias gsfupc="git-update-submodules"
+
 alias gf='git fetch'
 alias gfa='git fetch --all -p -v'
 
-alias ger='git merge'
+alias ger='git merge --no-ff'
 alias gco='git checkout'
 alias gup='gu origin'
 alias gpu='gp origin'
 alias gupa='pull_all_branches'
 alias gupc='gu origin $(current_branch)'
+alias gipc='gu int $(current_branch)'
 alias gpuc='gp origin $(current_branch)'
+alias gpic='gp int $(current_branch)'
 alias gpp='git pull && git push'
 alias gpm='git push origin master'
 alias ggc="git gui citool &"
 alias gta="gitk --all &"
 alias gmt='git mergetool --tool=meld -y'
-alias glast='git log --stat -n 1'
+alias glast='git log --stat -n 1 --show-signature'
 alias lol="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias tct=ticket
 
@@ -121,10 +175,14 @@ alias gres="git stash pop"
 
 alias dev='gco local-dev'
 alias master='gco master'
-alias prod='gco prod'
-alias prodd='gco production'
+alias prodd='gco prod'
+alias prod='gco production'
 
 
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 
 alias dot=gitdots
+
+alias glb=git-local-branch
+alias gul=git-up-local
+alias gpl=git-push-local

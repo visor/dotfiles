@@ -12,7 +12,7 @@ IMPORTANT: Version 2.x API is not compatible with earlier versions.
 
 
 %files ext-imagick
-%defattr(-,root,root)
+%defattr(0644,root,root)
 %{_php_root}/extensions/imagick.so
 %{_php_root}/conf.d/imagick.ini
 %{_php_root}/include/php/ext/imagick/*.h

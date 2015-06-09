@@ -7,6 +7,7 @@ install -m 0644 session.ini  %{_php_conf}/session.ini
 install -m 0644 upload.ini   %{_php_conf}/upload.ini
 install -m 0644 xdebug.ini   %{_php_conf}/xdebug.ini
 
+%_ext_ini apc
 %_ext_ini bcmath
 %_ext_ini bz2
 %_ext_ini calendar
@@ -18,6 +19,7 @@ install -m 0644 xdebug.ini   %{_php_conf}/xdebug.ini
 %_ext_ini ftp
 %_ext_ini gd
 %_ext_ini gearman
+%_ext_ini gmp
 %_ext_ini http
 %_ext_ini iconv
 %_ext_ini igbinary

@@ -1,3 +1,4 @@
+%include %{_topdir}/SPECS/php-common/ext/apc.spec
 %include %{_topdir}/SPECS/php-common/ext/bcmath.spec
 %include %{_topdir}/SPECS/php-common/ext/bz2.spec
 %include %{_topdir}/SPECS/php-common/ext/calendar.spec
@@ -9,6 +10,7 @@
 %include %{_topdir}/SPECS/php-common/ext/ftp.spec
 %include %{_topdir}/SPECS/php-common/ext/gd.spec
 %include %{_topdir}/SPECS/php-common/ext/gearman.spec
+%include %{_topdir}/SPECS/php-common/ext/gmp.spec
 %include %{_topdir}/SPECS/php-common/ext/http.spec
 %include %{_topdir}/SPECS/php-common/ext/iconv.spec
 %include %{_topdir}/SPECS/php-common/ext/igbinary.spec

@@ -9,7 +9,7 @@ Igbinary is a drop in replacement for the standard php serializer.
 
 
 %files ext-igbinary
-%defattr(-,root,root)
+%defattr(0644,root,root)
 %{_php_root}/extensions/igbinary.so
 %{_php_root}/conf.d/igbinary.ini
 %{_php_root}/include/php/ext/igbinary/igbinary.h

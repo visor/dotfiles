@@ -9,8 +9,8 @@ Phar for PHP
 
 
 %files ext-phar
-%defattr(-,root,root)
-%{_php_root}/bin/phar
+%defattr(0644,root,root)
+#%{_php_root}/bin/phar
 %{_php_root}/bin/phar.phar
 %{_php_root}/extensions/phar.so
 %{_php_root}/conf.d/phar.ini

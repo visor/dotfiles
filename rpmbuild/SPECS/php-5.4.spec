@@ -39,7 +39,7 @@ developers to write dynamically generated pages quickly.
 pushd %{_sourcedir}
 	./make-php-ini-tgz
 popd
-rm -rf %{name}
+rm -rf php-%{_php_ver}
 bzip2 -dc %{_sourcedir}/php/php-%{_php_ver}.tar.bz2 | tar -xf -
 cd php-%{_php_ver}
 gzip -dc %{_sourcedir}/php-ini.tgz | /bin/tar -xf -
@@ -83,6 +83,7 @@ install -dm 0755 $RPM_BUILD_ROOT%{_php_root}/conf.d
 install -dm 0755 $RPM_BUILD_ROOT%{_php_root}/init.d
 install -dm 0755 $RPM_BUILD_ROOT%{_php_root}/info
 install -dm 0755 $RPM_BUILD_ROOT%{_php_root}/etc
+install -dm 0755 $RPM_BUILD_ROOT%{_php_root}/pear
 install -dm 0755 $RPM_BUILD_ROOT%{_php_root}/extensions
 install -dm 0755 $RPM_BUILD_ROOT%{_php_root}/var/log
 install -dm 0755 $RPM_BUILD_ROOT%{_php_root}/var/run
@@ -98,8 +99,9 @@ install -m 0644 php.ini $RPM_BUILD_ROOT%{_php_root}/etc/php.ini
 chmod 0644 %{_php_ext}/*.so
 mv %{_php_ext}/*.so %{_php_bext}
 rm -rf %{_php_ext}
+%_remove_buildroot /bin/phar.phar
+#%include %{_topdir}/SPECS/php-common/pear.spec
 
-cat $RPM_BUILD_ROOT%{_php_root}/bin/phar.phar | sed -r s=$RPM_BUILD_ROOT== - > $RPM_BUILD_ROOT%{_php_root}/bin/phar.phar
 
 
 %files
@@ -175,6 +177,9 @@ PHP development files
 
 %files devel
 %defattr(-,root,root)
+%{_php_root}/bin/pear
+%{_php_root}/bin/peardev
+%{_php_root}/bin/pecl
 %{_php_root}/bin/php-config
 %{_php_root}/bin/phpize
 %{_php_root}/man/man1/php-config.1
@@ -182,6 +187,8 @@ PHP development files
 %{_php_root}/include/php
 %{_php_root}/lib64/build
 %{_php_root}/info
+%{_php_root}/pear
+
 
 
 %include %{_topdir}/SPECS/php-common/exts.spec

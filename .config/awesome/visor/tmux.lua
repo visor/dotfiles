@@ -13,12 +13,13 @@ local terminal = terminal
 
 module("visor.tmux")
 
-debug        = false
-tagNumber    = 6
-screenNumber = 1
-config       = {}
-fileName     = nil
-runCommand   = terminal .. " -n %s -title %s -e tmux -L %s"
+debug          = false
+tagNumber      = 6
+screenNumber   = 1
+config         = {}
+fileName       = nil
+runSudoCommand = terminal .. " -n %s -title %s -e sudo tmux -L %s"
+runCommand     = terminal .. " -n %s -title %s -e tmux -L %s"
 
 local getTmux = function(name)
 	for k, c in pairs(client.get()) do
@@ -40,6 +41,10 @@ local getCommand = function(name)
 		title = appConfig.title
 	end
 
+	if (appConfig.sudo) then
+		return string.format(runSudoCommand, name, title, name) .. " " .. session
+	end
+
 	return string.format(runCommand, name, title, name) .. " " .. session
 end
 
@@ -55,7 +60,7 @@ show = function(name)
 
 	local screen = config[name].screen or screenNumber
 	local tag    = config[name].tag or tagNumber
-	local tmux = getTmux(name)
+	local tmux   = getTmux(name)
 	awful.screen.focus(screen)
 	awful.tag.viewonly(tags[screen][tag])
 	if (tmux) then

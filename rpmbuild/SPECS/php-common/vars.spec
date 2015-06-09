@@ -18,10 +18,14 @@
 %define _zend_ext_ini() \
 	%define ini %1 \
 	%{?2:%define ini %2} \
-	echo %ini && echo "zend_extension=%{_php_bext}/%{1}.so" > %{_php_conf}/%{ini}.ini && chmod 0644 %{_php_conf}/%{ini}.ini;
+	echo %ini && echo "zend_extension=%{_php_root}/extensions/%{1}.so" > %{_php_conf}/%{ini}.ini && chmod 0644 %{_php_conf}/%{ini}.ini;
 
 %define _use_ext_files() \
 	%define ini %1 \
 	%{?2:%define ini %2} \
 	%{_php_root}/extensions/%{1}.so \
 	%{_php_root}/conf.d/%{ini}.ini;
+
+
+%define _remove_buildroot() \
+	%{_topdir}/SOURCES/remove-buildroot "%{_php_root}%{1}";

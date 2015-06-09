@@ -11,7 +11,7 @@ and optimizing PHP intermediate code.
 
 
 %files ext-apc
-%defattr(-,root,root)
+%defattr(0644,root,root)
 %{_php_root}/extensions/apc.so
 %{_php_root}/conf.d/apc.ini
 %{_php_root}/include/php/ext/apc/apc_serializer.h

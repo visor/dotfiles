@@ -9,7 +9,7 @@ Extended HTTP support. Again.
 
 
 %files ext-http
-%defattr(-,root,root)
+%defattr(0644,root,root)
 %{_php_root}/extensions/http.so
 %{_php_root}/conf.d/http.ini
 %{_php_root}/include/php/ext/http/*.h

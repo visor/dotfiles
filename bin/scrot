@@ -4,7 +4,7 @@ dir="$HOME/scrots/`date +%Y/%m/%d`"
 file="$dir/`date +%H%M%S.%N`.png"
 
 (cd $dir >/dev/null 2>&1) || (mkdir -p $dir)
-import $file
+sleep 5 && import $file
 echo "notify(\"Скриншот\", \"$file\")" | awesome-client
 
 #png $file
