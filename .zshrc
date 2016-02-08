@@ -29,7 +29,7 @@ DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(visor extract svn symfony2 yum composer systemd colored-man dircycle catimg fabric gitignore jsontools systemadmin)
+plugins=(visor extract svn symfony2 yum composer systemd colored-man catimg fabric gitignore jsontools systemadmin copydir copyfile cp encode64 frontend-search zsh_reload)
 
 source $ZSH/oh-my-zsh.sh
 

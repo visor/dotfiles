@@ -47,7 +47,7 @@ for s = 1, screen.count() do
 	left_layout:add(tagList[s])
 	left_layout:add(barPrompt[s])
 
-	if s == 2 then
+	if s == 1 then
 		right_layout:add(cpuWidget)
 		right_layout:add(sepWidget)
 		right_layout:add(memWidget)

@@ -181,7 +181,7 @@ handlers['#']= {
 }
 
 show = function()
-	local size = screen[mouse.screen].geometry;
+	local size = screen[mouse.screen + 0].geometry;
 
 	getBox()
 	box.width = size.width - 200

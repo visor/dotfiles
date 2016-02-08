@@ -24,7 +24,7 @@ awful.rules.rules = {
 	{
 		rule = { class = "Firefox", role = "browser" },
 		properties = {
-			tag = tags[1][2],
+			tag = tags[2][2],
 			floating = false
 		}
 	},
@@ -52,6 +52,7 @@ awful.rules.rules = {
 	{
 		rule = { class = "Google-chrome", role = "pop-up" },
 		properties = {
+			tag = tags[2][2],
 			floating = true,
 			callback = function (c) awful.placement.centered(c) end
 		}
@@ -102,12 +103,13 @@ awful.rules.rules = {
 	{
 		rule = { class = "Skype", name = "victor.karamzin - Skype™" },
 		properties = {
+			tag                  = tags[2][4],
 			floating             = true,
 			switchtotag          = true,
 			maximized_vertical   = true,
 			maximized_horizontal = false
 		},
-		callback = function (c) visor.imBuddy(c, 400, true); end
+		callback = function (c) visor.imBuddy(c, 400, false); end
 	},
 	{
 		rule = { class = "Pidgin" },
@@ -121,7 +123,7 @@ awful.rules.rules = {
 			maximized_vertical   = true,
 			maximized_horizontal = true
 		},
-		callback = function (c) visor.imBuddy(c, 400, true); end
+		callback = function (c) visor.imBuddy(c, 400, false); end
 	},
 	{
 		rule_any = { class = { "Psi-plus" } }, except = { instance = "main" },
@@ -135,7 +137,7 @@ awful.rules.rules = {
 			maximized_vertical   = true,
 			maximized_horizontal = true
 		},
-		callback = function (c) visor.imBuddy(c, 400, true); end
+		callback = function (c) visor.imBuddy(c, 400, false); end
 	},
 	-- 5.med
 	{
@@ -145,10 +147,6 @@ awful.rules.rules = {
 	{
 		rule = { icon_name = "live" },
 		properties = { tag = tags[2][8] }
-	},
-	{
-		rule = { class = "MPlayer" },
-		properties = { floating = true, tag = tags[1][5] }
 	},
 	{
 		rule = { class = "gimp" },
@@ -196,6 +194,21 @@ awful.rules.rules = {
 		rule = { class = "dosbox" },
 		properties = {
 			tag = tags[2][9],
+			callback = function (c) awful.placement.centered(c) end
+		}
+	},
+
+	-- electronics
+	{
+		rule = { class = "Eagle" },
+		properties = {
+			tag = tags[1][4],
+		}
+	},
+	{
+		rule = { class = "Eagle", modal = true },
+		properties = {
+			tag = tags[1][4],
 			callback = function (c) awful.placement.centered(c) end
 		}
 	}

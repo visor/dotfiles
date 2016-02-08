@@ -61,7 +61,11 @@ show = function(name)
 	local screen = config[name].screen or screenNumber
 	local tag    = config[name].tag or tagNumber
 	local tmux   = getTmux(name)
-	awful.screen.focus(screen)
+	if (1 == scree) then
+		awful.screen.focus(2)
+	else
+		awful.screen.focus(1)
+	end
 	awful.tag.viewonly(tags[screen][tag])
 	if (tmux) then
 		client.focus = tmux

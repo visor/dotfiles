@@ -10,8 +10,106 @@ tmux.config       = {
 		tag = 6,
 		session = {
 			"new-session -s 'Console'",
-			"new-window",
-			"select-window -t 1",
+			"rename-window common",
+			"setw -t 1 monitor-activity off",
+
+			-- -- RosNeft
+			-- "new-window -c /home/interprogma/source/rosneft",
+			-- "rename-window rosneft",
+			-- "setw -t 2 monitor-activity off",
+			-- "split-window -c /home/interprogma/source/rosneft/etp",
+			-- "select-pane -t 0",
+
+			-- OPK
+			"new-window -c /home/interprogma/source/opk/cometp",
+			"rename-window opk",
+			"setw -t 2 monitor-activity off",
+			"split-window -c /home/interprogma/source/opk/installer",
+
+			-- edi
+			"new-window -c /home/interprogma/source/edi",
+			"rename-window edi",
+			"setw -t 2 monitor-activity off",
+			"split-window -c /home/interprogma/source/edi/application/modules/edi",
+
+			-- RosAtom 2
+			-- "new-window -c /home/interprogma/source/rosatom-2",
+			-- "rename-window rosatom",
+			-- "setw -t 2 monitor-activity off",
+
+			-- -- Avtodor PO
+			-- "new-window -c /home/interprogma/source/avtodor",
+			-- "rename-window avtodor-po",
+			-- "setw -t 2 monitor-activity off",
+			-- "split-window -c /home/interprogma/source/avtodor/commodules/po",
+			-- "split-window -c /home/interprogma/source/avtodor/commodules/cm",
+			-- "select-pane -t 0",
+			-- "split-window -c /home/interprogma/source/avtodor/cometp",
+			-- "select-pane -t 0",
+
+			-- -- Avtodor ETP
+			-- "new-window -c /home/interprogma/source/avtodor-etp",
+			-- "rename-window avtodor-etp",
+			-- "setw -t 3 monitor-activity off",
+			-- "split-window -c /home/interprogma/source/avtodor-etp/cometp",
+			-- "select-pane -t 0",
+
+			-- -- GPO (SPB)
+			-- "new-window -c /home/interprogma/source/gpo",
+			-- "rename-window gpospb",
+			-- "setw -t 2 monitor-activity off",
+			-- "split-window -c /home/interprogma/source/gpo/commodules/po",
+			-- "split-window -c /home/interprogma/source/gpo/commodules/cm",
+			-- "select-pane -t 0",
+			-- "split-window -c /home/interprogma/source/gpo/cometp",
+			-- "select-pane -t 0",
+
+			-- -- МЧC
+			-- "new-window -c /home/interprogma/source/mchs",
+			-- "rename-window mchs",
+			-- "setw -t 4 monitor-activity off",
+			-- "split-window -c /home/interprogma/source/mchs/commodules/bp",
+			-- "split-window -c /home/interprogma/source/mchs/commodules/po",
+			-- "select-pane -t 0",
+			-- "split-window -h -c /home/interprogma/source/mchs/commodules/mchs",
+			-- "select-pane -D",
+			-- "split-window -h -c /home/interprogma/source/mchs/commodules/cm",
+			-- "select-pane -D",
+			-- "split-window -h -c /home/interprogma/source/mchs/cometp",
+			-- "select-pane -t 0",
+
+			-- АИС ГЗ Ставраполь
+			"new-window -c /home/interprogma/source/ast",
+			"rename-window ast",
+			"setw -t 3 monitor-activity off",
+			"split-window -c /home/interprogma/source/ast/tools",
+			"split-window -c /home/interprogma/source/ast/cometp",
+			"split-window -c /home/interprogma/source/ast/commodules/ast",
+			"select-pane -t 0",
+			"split-window -h -c /home/interprogma/source/ast/commodules/cm",
+			"select-pane -D",
+			"split-window -h -c /home/interprogma/source/ast/commodules/nsi",
+			"select-pane -D",
+			"split-window -h -c /home/interprogma/source/ast/commodules/po",
+			"select-pane -t 0",
+
+			-- Gostinets
+			"new-window -c /home/gostinets/gostinets.dev",
+			"rename-window gostinets",
+			"setw -t 4 monitor-activity off",
+			"split-window -c /home/gostinets/gostinets.dev/vendor/gostinets/v1",
+			"split-window -c /home/gostinets/gostinets.dev/vendor/gostinets/v2",
+			"select-pane -t 0",
+
+			-- SmartHome
+			"new-window -c /home/smart",
+			"rename-window smart-home",
+			"setw -t 5 monitor-activity off",
+			"split-window -c /home/smart/kodi",
+			"select-pane -t 0",
+
+			-- The End
+			"select-window -t 1"
 		}
 	},
 	files = {
@@ -32,7 +130,7 @@ tmux.config       = {
 	music = {
 		title = "Music",
 		screen = 2,
-		tag = 6,
+		tag = 5,
 		session = {
 			"new-session -s 'Music' cmus",
 			"rename-window cmus",
@@ -57,12 +155,15 @@ tmux.config       = {
 		title = "Root",
 		screen = 2,
 		tag = 6,
-		session = {},
-		todo = {
-			"yum",
-			"rpmreaper",
-			"/data/sources",
-			"/rpm/specs"
+		sudo = true,
+		session = {
+			"new-session -s 'Root'",
+			"rename-window root",
+			"neww ranger",
+			"rename-window ranger",
+			"setw -t 1 monitor-activity off",
+			"setw -t 2 monitor-activity off",
+			"select-window -t 1"
 		}
 	}
 }

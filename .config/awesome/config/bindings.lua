@@ -31,6 +31,7 @@ globalkeys = awful.util.table.join(globalkeys,
 	-- awful.key({ modkey }, "e", function () scratch.drop("urxvt -name mc -e mc", "center", "center", 1280, 1000) end, "Midnight Commander"),
 	awful.key({ modkey }, "e", function () tmux.show("files") end, "Midnight Commander"),
 	awful.key({ modkey }, "t", function () tmux.show("terminal") end, "Терминал"),
+	awful.key({ modkey }, "p", function () run(terminal .. " -e psql") end, "Терминал"),
 	awful.key({ modkey }, "-", function () tmux.show("music") end, "Музыка"),
 	awful.key({ modkey }, "=", function () tmux.show("torrent") end, "Торренты"),
 	awful.key({ modkey }, "`", function () tmux.show("root") end, "Root"),
@@ -40,22 +41,22 @@ globalkeys = awful.util.table.join(globalkeys,
 	-- end),
 
 	keydoc.group("Музыка"),
-	-- awful.key({           }, "XF86AudioMute",        function () music.volumeToggle() end, "Включить/выключить звук"),
-	awful.key({           }, "#160",                 function () music.volumeToggle() end, "Включить/выключить звук"),
-	-- awful.key({           }, "XF86AudioLowerVolume", function () music.volumeDown() end, "Уменьшить громкость"),
-	awful.key({           }, "#174",                 function () music.volumeDown() end, "Уменьшить громкость"),
-	-- awful.key({           }, "XF86AudioRaiseVolume", function () music.volumeUp() end, "Увеличить громкость"),
-	awful.key({           }, "#176",                 function () music.volumeUp() end, "Увеличить громкость"),
-	-- awful.key({           }, "XF86AudioPlay",        function () music.toggle() end, "Пауза/Играть"),
-	awful.key({           }, "#162",                 function () music.toggle() end, "Пауза/Играть"),
-	-- awful.key({ "Control" }, "XF86AudioPlay",        function () music.showInfo() end, "Что сейчас играет?"),
-	awful.key({ "Control" }, "#162",                 function () music.showInfo() end, "Что сейчас играет?"),
-	-- awful.key({ modkey    }, "XF86AudioLowerVolume", function () music.prev() end, "Предыдущий трек"),
-	awful.key({ modkey    }, "#174",                 function () music.prev() end, "Предыдущий трек"),
-	-- awful.key({ modkey    }, "XF86AudioRaiseVolume", function () music.next() end, "Следующий трек"),
-	awful.key({ modkey    }, "#176",                 function () music.next() end, "Следующий трек"),
-	-- awful.key({ modkey }, "XF86AudioMute",        function () run(mpc .. " shuffle") end, "Перемешать плейлист"),
-	-- awful.key({ modkey }, "#160",                 function () run(mpc .. " shuffle") end),
+	awful.key({           }, "XF86AudioMute",        function () music.volumeToggle() end, "Включить/выключить звук"),
+	-- awful.key({           }, "#121",                 function () music.volumeToggle() end, "Включить/выключить звук"),
+	awful.key({           }, "XF86AudioLowerVolume", function () music.volumeDown() end, "Уменьшить громкость"),
+	-- awful.key({           }, "#122",                 function () music.volumeDown() end, "Уменьшить громкость"),
+	awful.key({           }, "XF86AudioRaiseVolume", function () music.volumeUp() end, "Увеличить громкость"),
+	-- awful.key({           }, "#123",                 function () music.volumeUp() end, "Увеличить громкость"),
+	awful.key({           }, "XF86AudioPlay",        function () music.toggle() end, "Пауза/Играть"),
+	-- awful.key({           }, "#172",                 function () music.toggle() end, "Пауза/Играть"),
+	awful.key({ "Control" }, "XF86AudioPlay",        function () music.showInfo() end, "Что сейчас играет?"),
+	-- awful.key({ "Control" }, "#172",                 function () music.showInfo() end, "Что сейчас играет?"),
+	awful.key({ modkey    }, "XF86AudioLowerVolume", function () music.prev() end, "Предыдущий трек"),
+	-- awful.key({ modkey    }, "#122",                 function () music.prev() end, "Предыдущий трек"),
+	awful.key({ modkey    }, "XF86AudioRaiseVolume", function () music.next() end, "Следующий трек"),
+	-- awful.key({ modkey    }, "#123",                 function () music.next() end, "Следующий трек"),
+	awful.key({ modkey }, "XF86AudioMute",        function () run(mpc .. " shuffle") end, "Перемешать плейлист"),
+	-- awful.key({ modkey }, "#121",                 function () run(mpc .. " shuffle") end),
 
 	keydoc.group("Теги"),
 	awful.key({ modkey }, "Left",  awful.tag.viewprev,        "Перейти на тег слева"),
@@ -188,7 +189,7 @@ for i = 1, keynumber do
 	globalkeys = awful.util.table.join(globalkeys,
 		awful.key({ modkey }, "#" .. i + 9, function ()
 			if tags[1][i] then
-				awful.screen.focus(1)
+				awful.screen.focus(2)
 				awful.tag.viewonly(tags[1][i])
 			end
 			-- local screen = mouse.screen
@@ -198,7 +199,7 @@ for i = 1, keynumber do
 		end),
 		awful.key({ modkey }, "#" .. numpad_map[i], function ()
 			if tags[2][i] then
-				awful.screen.focus(2)
+				awful.screen.focus(1)
 				awful.tag.viewonly(tags[2][i])
 			end
 		end),

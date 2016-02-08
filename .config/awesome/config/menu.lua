@@ -7,7 +7,7 @@ groupArduino = {
 	{ "IDE (1.&0.5)", "/usr/programs/arduino-1.0.5/arduino", "/home/visor/.local/arduino.jpg" },
 	sep,
 	{ "&Fritzing",    "/usr/programs/fritzing/Fritzing", "/home/visor/.local/fritzing.png" },
-	{ "&Eagle",       "/usr/programs/eagle/bin/eagle", "/usr/programs/eagle/bin/eagleicon50.png" }
+	{ "&Eagle",       "/usr/programs/eagle-7.2.0/bin/eagle", "/usr/programs/eagle-7.2.0/bin/eagleicon50.png" }
 }
 
 groupAwesome = {

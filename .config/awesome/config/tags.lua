@@ -1,11 +1,11 @@
 tags[1] = awful.tag(
 	{ "dev", "web", "net", "gr", "vdo"},
-	1,
+	2,
 	layouts[1]
 )
 tags[2] = awful.tag(
 	{ "dev", "web", "net", "im", "med", "cons", "todo", "∞", "game" },
-	2,
+	1,
 	layouts[1]
 )
 
