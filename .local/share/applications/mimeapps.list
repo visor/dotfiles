@@ -1,7 +1,7 @@
 [Default Applications]
-text/html=luakit.desktop
-x-scheme-handler/http=luakit.desktop
-x-scheme-handler/https=luakit.desktop
+text/html=userapp-Firefox Developer Edition-FDR6OX.desktop
+x-scheme-handler/http=userapp-Firefox Developer Edition-FDR6OX.desktop
+x-scheme-handler/https=userapp-Firefox Developer Edition-FDR6OX.desktop
 x-scheme-handler/about=luakit.desktop
 x-scheme-handler/unknown=luakit.desktop
 x-scheme-handler/mailto=mozilla-thunderbird.desktop
@@ -85,14 +85,21 @@ x-content/video-vcd=mplayer.desktop;brasero.desktop;
 x-scheme-handler/mms=mplayer.desktop;
 x-scheme-handler/rtmp=mplayer.desktop;
 x-scheme-handler/rtsp=mplayer.desktop;
-
+x-scheme-handler/ftp=userapp-Firefox Developer Edition-FDR6OX.desktop
+x-scheme-handler/chrome=userapp-Firefox Developer Edition-FDR6OX.desktop
+application/x-extension-htm=userapp-Firefox Developer Edition-FDR6OX.desktop
+application/x-extension-html=userapp-Firefox Developer Edition-FDR6OX.desktop
+application/x-extension-shtml=userapp-Firefox Developer Edition-FDR6OX.desktop
+application/xhtml+xml=userapp-Firefox Developer Edition-FDR6OX.desktop
+application/x-extension-xhtml=userapp-Firefox Developer Edition-FDR6OX.desktop
+application/x-extension-xht=userapp-Firefox Developer Edition-FDR6OX.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=mozilla-thunderbird.desktop;
 message/rfc822=mozilla-thunderbird.desktop;
 application/x-extension-eml=mozilla-thunderbird.desktop;
 x-scheme-handler/news=mozilla-thunderbird.desktop;
-text/html=luakit.desktop
+text/html=luakit.desktop;userapp-Firefox Developer Edition-FDR6OX.desktop;firefox.desktop;
 image/bmp=feh.desktop;
 image/gif=feh.desktop;
 image/png=feh.desktop;
@@ -104,3 +111,13 @@ image/x-pcx=feh.desktop;
 image/x-tga=feh.desktop;
 image/xpm=feh.desktop;
 image/svg+xml=feh.desktop;
+x-scheme-handler/http=userapp-Firefox Developer Edition-FDR6OX.desktop;firefox.desktop;
+x-scheme-handler/https=userapp-Firefox Developer Edition-FDR6OX.desktop;firefox.desktop;
+x-scheme-handler/ftp=userapp-Firefox Developer Edition-FDR6OX.desktop;firefox.desktop;
+x-scheme-handler/chrome=userapp-Firefox Developer Edition-FDR6OX.desktop;firefox.desktop;
+application/x-extension-htm=userapp-Firefox Developer Edition-FDR6OX.desktop;firefox.desktop;
+application/x-extension-html=userapp-Firefox Developer Edition-FDR6OX.desktop;firefox.desktop;
+application/x-extension-shtml=userapp-Firefox Developer Edition-FDR6OX.desktop;firefox.desktop;
+application/xhtml+xml=userapp-Firefox Developer Edition-FDR6OX.desktop;firefox.desktop;
+application/x-extension-xhtml=userapp-Firefox Developer Edition-FDR6OX.desktop;firefox.desktop;
+application/x-extension-xht=userapp-Firefox Developer Edition-FDR6OX.desktop;firefox.desktop;
