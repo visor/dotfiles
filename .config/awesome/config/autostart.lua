@@ -2,7 +2,7 @@
 run("setxkbmap -layout 'us,ru(winkeys)' -option -option 'grp:shift_toggle,misc:typo,lv3:ralt_switch,compose:menu,terminate:ctrl_alt_bksp'")
 
 -- Настройка экранов
-run("xrandr --output DVI-I-0 --mode 1920x1080 --output DVI-I-1 --mode 1920x1080 --left-of DVI-I-0")
+-- run("xrandr --output DVI-I-1 --mode 1920x1080 --output DVI-I-2 --mode 1920x1080 --left-of DVI-I-1")
 run("tmux start-server")
 
 

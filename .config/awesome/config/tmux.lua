@@ -20,17 +20,28 @@ tmux.config       = {
 			-- "split-window -c /home/interprogma/source/rosneft/etp",
 			-- "select-pane -t 0",
 
-			-- OPK
-			"new-window -c /home/interprogma/source/opk/cometp",
-			"rename-window opk",
+			-- TMK
+			"new-window -c /home/interprogma/source/tmk-sale",
+			"rename-window tmk-sale",
 			"setw -t 2 monitor-activity off",
-			"split-window -c /home/interprogma/source/opk/installer",
+			"split-window -c /home/interprogma/source/tmk-sale/cometp",
 
-			-- edi
-			"new-window -c /home/interprogma/source/edi",
-			"rename-window edi",
-			"setw -t 2 monitor-activity off",
-			"split-window -c /home/interprogma/source/edi/application/modules/edi",
+			-- -- edi
+			-- "new-window -c /home/interprogma/source/edi",
+			-- "rename-window edi",
+			-- "setw -t 3 monitor-activity off",
+			-- "split-window -c /home/interprogma/source/edi/application/modules/edi",
+			
+			-- GazBur
+			"new-window -c /home/interprogma/source/gazbur",
+			"rename-window gazbur",
+			"setw -t 3 monitor-activity off",
+			"split-window -c /home/interprogma/source/gazbur/cometp",
+			"select-pane -t 0",
+			"split-window -h -c /home/interprogma/source/gazbur/commodules/orderbook",
+			"select-pane -D",
+			"split-window -h -c /home/interprogma/source/gazbur/cometp2/module/Ext1C",
+			"select-pane -t 0",
 
 			-- RosAtom 2
 			-- "new-window -c /home/interprogma/source/rosatom-2",
@@ -81,14 +92,13 @@ tmux.config       = {
 			-- АИС ГЗ Ставраполь
 			"new-window -c /home/interprogma/source/ast",
 			"rename-window ast",
-			"setw -t 3 monitor-activity off",
-			"split-window -c /home/interprogma/source/ast/tools",
+			"setw -t 4 monitor-activity off",
+			"split-window -c /home/interprogma/source/ast/projects/ast/composer",
 			"split-window -c /home/interprogma/source/ast/cometp",
-			"split-window -c /home/interprogma/source/ast/commodules/ast",
 			"select-pane -t 0",
-			"split-window -h -c /home/interprogma/source/ast/commodules/cm",
+			"split-window -h -c /home/interprogma/source/ast/commodules/ast",
 			"select-pane -D",
-			"split-window -h -c /home/interprogma/source/ast/commodules/nsi",
+			"split-window -h -c /home/interprogma/source/ast/commodules/cm",
 			"select-pane -D",
 			"split-window -h -c /home/interprogma/source/ast/commodules/po",
 			"select-pane -t 0",
@@ -96,7 +106,7 @@ tmux.config       = {
 			-- Gostinets
 			"new-window -c /home/gostinets/gostinets.dev",
 			"rename-window gostinets",
-			"setw -t 4 monitor-activity off",
+			"setw -t 5 monitor-activity off",
 			"split-window -c /home/gostinets/gostinets.dev/vendor/gostinets/v1",
 			"split-window -c /home/gostinets/gostinets.dev/vendor/gostinets/v2",
 			"select-pane -t 0",
@@ -104,8 +114,16 @@ tmux.config       = {
 			-- SmartHome
 			"new-window -c /home/smart",
 			"rename-window smart-home",
-			"setw -t 5 monitor-activity off",
+			"setw -t 6 monitor-activity off",
 			"split-window -c /home/smart/kodi",
+			"select-pane -t 0",
+
+			-- HarryPotter
+			"new-window -c /home/harry/source",
+			"rename-window harry-potter",
+			"setw -t 7 monitor-activity off",
+			"split-window -c /home/harry/vagrant-box",
+			"split-window -h -c /home/harry/vagrant-box/migrate",
 			"select-pane -t 0",
 
 			-- The End

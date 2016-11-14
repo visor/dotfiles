@@ -43,14 +43,14 @@ awful.rules.rules = {
 		}
 	},
 	{
-		rule = { class = "Google-chrome", role = "browser" },
+		rule = { class = "google-chrome", role = "browser" },
 		properties = {
 			tag = tags[2][2],
 			floating = false
 		}
 	},
 	{
-		rule = { class = "Google-chrome", role = "pop-up" },
+		rule = { class = "google-chrome", role = "pop-up" },
 		properties = {
 			tag = tags[2][2],
 			floating = true,
@@ -198,7 +198,7 @@ awful.rules.rules = {
 		}
 	},
 
-	-- electronics
+	-- electronics (screen1, gr)
 	{
 		rule = { class = "Eagle" },
 		properties = {
@@ -207,6 +207,19 @@ awful.rules.rules = {
 	},
 	{
 		rule = { class = "Eagle", modal = true },
+		properties = {
+			tag = tags[1][4],
+			callback = function (c) awful.placement.centered(c) end
+		}
+	},
+	{
+		rule = { class = "Kicad" },
+		properties = {
+			tag = tags[1][4],
+		}
+	},
+	{
+		rule = { class = "Kicad", modal = true },
 		properties = {
 			tag = tags[1][4],
 			callback = function (c) awful.placement.centered(c) end

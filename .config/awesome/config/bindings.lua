@@ -189,7 +189,7 @@ for i = 1, keynumber do
 	globalkeys = awful.util.table.join(globalkeys,
 		awful.key({ modkey }, "#" .. i + 9, function ()
 			if tags[1][i] then
-				awful.screen.focus(2)
+				awful.screen.focus(1)
 				awful.tag.viewonly(tags[1][i])
 			end
 			-- local screen = mouse.screen
@@ -199,7 +199,7 @@ for i = 1, keynumber do
 		end),
 		awful.key({ modkey }, "#" .. numpad_map[i], function ()
 			if tags[2][i] then
-				awful.screen.focus(1)
+				awful.screen.focus(2)
 				awful.tag.viewonly(tags[2][i])
 			end
 		end),

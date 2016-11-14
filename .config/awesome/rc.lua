@@ -23,7 +23,7 @@ globalkeys    = {}
 tags          = {}
 __dir__       = os.getenv('HOME') .. "/.config/awesome"
 
-os.setlocale(os.getenv("LANG"))
+--os.setlocale(os.getenv("LANG"))
 -- }}}
 
 function import(file)

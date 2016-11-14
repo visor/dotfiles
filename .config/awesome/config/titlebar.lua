@@ -47,12 +47,11 @@ for s = 1, screen.count() do
 	left_layout:add(tagList[s])
 	left_layout:add(barPrompt[s])
 
-	if s == 1 then
+	if s == 2 then
 		right_layout:add(cpuWidget)
 		right_layout:add(sepWidget)
 		right_layout:add(memWidget)
 		right_layout:add(sepWidget)
-		-- right_layout:add(netWidget)
 		right_layout:add(sepWidget)
 		right_layout:add(wibox.widget.systray())
 		right_layout:add(clockWidget)

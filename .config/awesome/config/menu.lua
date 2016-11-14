@@ -1,13 +1,16 @@
 local run = awful.util.spawn
 local sep = { "—————————————————" }
 
-groupArduino = {
-	{ "I&DE",         "/usr/programs/arduino/arduino", "/home/visor/.local/arduino.jpg" },
-	{ "IDE (1.&5.7)", "/usr/programs/arduino-1.5.7/arduino", "/home/visor/.local/arduino.jpg" },
-	{ "IDE (1.&0.5)", "/usr/programs/arduino-1.0.5/arduino", "/home/visor/.local/arduino.jpg" },
+groupElectronics = {
+	{ "I&DE",         "/usr/programs/arduino/arduino", __dir__ .. "/icons/apps/arduino.jpg" },
+	{ "IDE (1.&5.7)", "/usr/programs/arduino-1.5.7/arduino", __dir__ .. "/icons/apps/arduino.jpg" },
+	{ "IDE (1.&0.5)", "/usr/programs/arduino-1.0.5/arduino", __dir__ .. "/icons/apps/arduino.jpg" },
 	sep,
-	{ "&Fritzing",    "/usr/programs/fritzing/Fritzing", "/home/visor/.local/fritzing.png" },
-	{ "&Eagle",       "/usr/programs/eagle-7.2.0/bin/eagle", "/usr/programs/eagle-7.2.0/bin/eagleicon50.png" }
+	{ "Ki&CAD",       "kicad", __dir__ .. "/icons/apps/kicad.png" },
+	-- { "&Fritzing",    "/usr/programs/fritzing/Fritzing", __dir__ .. "/icons/apps/fritzing.png" },
+	{ "&Eagle",       "/usr/programs/eagle-7.2.0/bin/eagle", "/usr/programs/eagle-7.2.0/bin/eagleicon50.png" },
+	sep,
+	{ "Serial monitor"}
 }
 
 groupAwesome = {
@@ -58,7 +61,7 @@ mainMenuItems = {
 	{ "&Work",     groupWork,        "/usr/share/icons/gnome/256x256/categories/applications-development.png" },
 	{ "&Internet", groupInternet,    "/usr/share/icons/gnome/256x256/categories/applications-internet.png" },
 	sep,
-	{ "Ar&duino", groupArduino,     "/home/visor/.local/arduino.jpg" },
+	{ "&Electronics", groupElectronics,  __dir__ .. "/icons/apps/electronics.png" },
 	sep,
 	{ "&Record",   groupScreencast },
 	{ "&Games",    groupGames },
