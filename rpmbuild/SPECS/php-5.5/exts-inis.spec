@@ -7,7 +7,6 @@ install -m 0644 session.ini  %{_php_conf}/session.ini
 install -m 0644 upload.ini   %{_php_conf}/upload.ini
 install -m 0644 xdebug.ini   %{_php_conf}/xdebug.ini
 
-%_ext_ini apc
 %_ext_ini bcmath
 %_ext_ini bz2
 %_ext_ini calendar
@@ -27,7 +26,6 @@ install -m 0644 xdebug.ini   %{_php_conf}/xdebug.ini
 %_ext_ini intl
 %_ext_ini json
 %_ext_ini libevent
-%_ext_ini mongo
 %_ext_ini mysql
 %_ext_ini pcntl
 %_ext_ini pdo_pgsql
@@ -48,7 +46,6 @@ install -m 0644 xdebug.ini   %{_php_conf}/xdebug.ini
 %_ext_ini xmlrpc
 %_ext_ini xmlwriter
 %_ext_ini xsl
-%_ext_ini yaf
 %_ext_ini zip
 
 

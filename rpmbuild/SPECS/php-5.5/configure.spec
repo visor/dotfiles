@@ -71,13 +71,13 @@
 	--enable-igbinary=shared \
 	--with-imagick=shared \
 	--with-libevent=shared \
-	--enable-mongo=shared \
 	--enable-proctitle=shared \
 	--enable-runkit=shared --enable-runkit-modify --enable-runkit-super --enable-runkit-sandbox \
 	--with-sphinx=shared \
 	--enable-xdebug=shared \
 	--with-pgsql=shared --with-pdo-pgsql=shared \
-	--enable-yaf=shared \
 	--enable-opcache=shared \
 	--with-gmp=shared \
 ###
+#	--enable-mongo=shared --with-libbson=/usr --with-libmongoc=/usr \
+#	--enable-yaf=shared \

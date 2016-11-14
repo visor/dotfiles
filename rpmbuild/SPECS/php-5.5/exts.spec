@@ -1,4 +1,3 @@
-%include %{_topdir}/SPECS/php-common/ext/apc.spec
 %include %{_topdir}/SPECS/php-common/ext/bcmath.spec
 %include %{_topdir}/SPECS/php-common/ext/bz2.spec
 %include %{_topdir}/SPECS/php-common/ext/calendar.spec
@@ -19,7 +18,6 @@
 %include %{_topdir}/SPECS/php-common/ext/json.spec
 %include %{_topdir}/SPECS/php-common/ext/libevent.spec
 %include %{_topdir}/SPECS/php-common/ext/mbstring.spec
-%include %{_topdir}/SPECS/php-common/ext/mongo.spec
 %include %{_topdir}/SPECS/php-common/ext/mysql.spec
 %include %{_topdir}/SPECS/php-5.5/ext/opcache.spec
 %include %{_topdir}/SPECS/php-common/ext/pcntl.spec
@@ -41,5 +39,4 @@
 %include %{_topdir}/SPECS/php-common/ext/xmlrpc.spec
 %include %{_topdir}/SPECS/php-common/ext/xmlwriter.spec
 %include %{_topdir}/SPECS/php-common/ext/xsl.spec
-%include %{_topdir}/SPECS/php-common/ext/yaf.spec
 %include %{_topdir}/SPECS/php-common/ext/zip.spec
